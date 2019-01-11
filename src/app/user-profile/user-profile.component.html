@@ -27,20 +27,135 @@
                                             Last Name
                                         </th>
                                         <th>
-                                            Country
+                                            DOB
                                         </th>
                                         <th>
-                                            Email
+                                                Email
                                         </th>
                                         <th>
-                                            Phone
+                                            Nationality
                                         </th>
                                         <th>
-                                            Total number Of Orders
+                                            Total number Of Trips
                                         </th>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let user of users ; index as i" [attr.data-index]="i" (click)="ToProfile(user.$id)"
+                                        <tr  class="usersRow">
+                                            <td>
+                                                 UID-10001
+                                            </td>
+                                            <td>
+                                                 Samantha
+                                            </td>
+                                            <td>
+                                               Brown
+                                            </td>
+                                            <td>
+                                                 25-11-1975
+                                            </td>
+                                            <td>
+                                                Lithuania
+                                            </td>
+                                            <td>
+                                                samantha@xvy.com
+                                            </td>
+                                            <td class="text-primary">
+                                                10
+                                            </td>
+                                        </tr>
+                                        <tr  class="usersRow">
+                                                <td>
+                                                     UID-10001
+                                                </td>
+                                                <td>
+                                                     Samantha
+                                                </td>
+                                                <td>
+                                                   Brown
+                                                </td>
+                                                <td>
+                                                     25-11-1975
+                                                </td>
+                                                <td>
+                                                    Lithuania
+                                                </td>
+                                                <td>
+                                                    samantha@xvy.com
+                                                </td>
+                                                <td class="text-primary">
+                                                    10
+                                                </td>
+                                            </tr>
+                                            <tr  class="usersRow">
+                                                    <td>
+                                                         UID-10002
+                                                    </td>
+                                                    <td>
+                                                         Chris
+                                                    </td>
+                                                    <td>
+                                                       Tailor
+                                                    </td>
+                                                    <td>
+                                                         14-8-1985
+                                                    </td>
+                                                    <td>
+                                                        Denmark
+                                                    </td>
+                                                    <td>
+                                                        ctailor@xvy.com
+                                                    </td>
+                                                    <td class="text-primary">
+                                                        1
+                                                    </td>
+                                                </tr>
+                                                <tr  class="usersRow">
+                                                        <td>
+                                                             UID-10003
+                                                        </td>
+                                                        <td>
+                                                             Lee 
+                                                        </td>
+                                                        <td>
+                                                           Jong-suk
+                                                        </td>
+                                                        <td>
+                                                             25-11-1995
+                                                        </td>
+                                                        <td>
+                                                            South Korea
+                                                        </td>
+                                                        <td>
+                                                            ljsuk@xvy.com
+                                                        </td>
+                                                        <td class="text-primary">
+                                                            4
+                                                        </td>
+                                                    </tr>
+                                                    <tr  class="usersRow">
+                                                            <td>
+                                                                 UID-10004
+                                                            </td>
+                                                            <td>
+                                                                 Bharadwaj
+                                                            </td>
+                                                            <td>
+                                                               Sinha
+                                                            </td>
+                                                            <td>
+                                                                 25-11-1965
+                                                            </td>
+                                                            <td>
+                                                                Mexico
+                                                            </td>
+                                                            <td>
+                                                                sinhaBhar@xvy.com
+                                                            </td>
+                                                            <td class="text-primary">
+                                                                30
+                                                            </td>
+                                                        </tr>
+                                        <!-- <tr *ngFor="let user of users ; index as i" [attr.data-index]="i" (click)="ToProfile(user.$id)"
                                             class="usersRow">
                                             <td>
                                                 {{ user.$id }}
@@ -63,7 +178,7 @@
                                             <td class="text-primary">
                                                 {{ this.totalOrders }}
                                             </td>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
                                 </table>
                             </div>

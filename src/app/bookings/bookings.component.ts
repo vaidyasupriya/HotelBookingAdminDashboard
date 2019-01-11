@@ -1,15 +1,6 @@
-import {
-  Component,
-  OnInit,
-  Output,
-  EventEmitter
-} from '@angular/core';
-import {
-  Router
-} from '@angular/router';
-import {
-  dynamicApiService
-} from '../../app/shared/dynamicApi.service';
+import {Component,  OnInit, Output, EventEmitter} from '@angular/core';
+import { Router} from '@angular/router';
+import { dynamicApiService} from '../shared/dynamicApi.service';
 import {
   HttpClient,
   HttpHeaders
@@ -24,9 +15,7 @@ import {
   FormControl,
   FormArray
 } from '@angular/forms';
-import {
-  ProductAdd
-} from './productAdd';
+import {  BookingsAdd } from './bookingsAdd';
 const EMAIL_REGEX = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
 const MOBILE_REGEX = /^([0|\+[0-9]{123,456})?([7-9][0-9]{9})$/;
 const NAME_REGEX = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
@@ -34,11 +23,11 @@ const PASSWORD_REGEX = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*]).{8,}$/
 declare var $: any;
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  selector: 'app-bookings',
+  templateUrl: './bookings.component.html',
+  styleUrls: ['./bookings.component.css']
 })
-export class ProductComponent implements OnInit {
+export class BookingsComponent implements OnInit {
   showFindButton = true;
   showFindLabel = false;
   showdeleteButton = false;
@@ -59,7 +48,7 @@ export class ProductComponent implements OnInit {
   list: any;
   abc: Array < any > = [];
   @Output() toDetails = new EventEmitter();
-  newProduct: ProductAdd = new ProductAdd();
+  newProduct: BookingsAdd = new BookingsAdd();
   foundAsinValue: any;
   foundIdValue: any;
   constructor(private router: Router, private http: HttpClient, private dynamicapiservice: dynamicApiService) {}

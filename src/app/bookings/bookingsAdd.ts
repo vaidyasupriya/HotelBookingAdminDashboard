@@ -1,4 +1,4 @@
-export class ProductAdd {
+export class BookingsAdd {
     asin  = '';
     name  = '';
     itemCode  = '';

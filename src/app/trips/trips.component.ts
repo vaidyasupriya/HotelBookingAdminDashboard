@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-transactions',
-  templateUrl: './transactions.component.html',
-  styleUrls: ['./transactions.component.css']
+  selector: 'app-trips',
+  templateUrl: './trips.component.html',
+  styleUrls: ['./trips.component.css']
 })
-export class TransactionsComponent implements OnInit {
+export class TripsComponent implements OnInit {
   transactionDetails: any;
   constructor(private http: HttpClient) { }
   ngOnInit() {

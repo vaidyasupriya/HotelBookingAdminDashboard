@@ -13,8 +13,8 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { TableListComponent } from './table-list/table-list.component';
-import { ProductComponent } from './product/product.component';
-import { TransactionsComponent } from './transactions/transactions.component';
+import { BookingsComponent } from './bookings/bookings.component';
+import { TripsComponent } from './trips/trips.component';
 import { MapsComponent } from './maps/maps.component';
 import { AgmCoreModule } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
@@ -35,9 +35,11 @@ import { LoginComponent } from './login/login.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatExpansionModule } from '@angular/material/expansion';
-import { OrdersComponent } from './orders/orders.component';
+import { CouponsComponent } from './coupons/coupons.component';
 import {MatCardModule} from '@angular/material/card';
 import { DashboardProfilePageComponent } from './dashboard-profile-page/dashboard-profile-page.component';
+import { MarginComponent } from './margin/margin.component';
+import { TravellersComponent } from './travellers/travellers.component';
 
 @NgModule({
   imports: [
@@ -70,6 +72,8 @@ import { DashboardProfilePageComponent } from './dashboard-profile-page/dashboar
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    // TravellersComponent,
+    // MarginComponent,
     // LoginComponent,
     // DashboardProfilePageComponent,
     // OrdersComponent,

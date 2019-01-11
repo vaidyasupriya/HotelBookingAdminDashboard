@@ -4,7 +4,7 @@
         <div class="card card-plain">
             <div class="card-header card-header-danger row" (click)='expand_ProductTable()'>
                     <ul class="col-11 mb-0 pr-0 pl-0">
-                        <h4 class="card-title ">Products Table</h4>
+                        <h4 class="card-title ">Bookings Table</h4>
                     </ul>
                     <ul class="col-1 mb-0 pr-0 pl-0">
                         <i class="material-icons dropdown-arrow product-dropdown-icon-style"   
@@ -26,29 +26,25 @@
                                             ID
                                         </th>
                                         <th>
-                                            ASIN
+                                            Booking Id
                                         </th>
                                         <th>
-                                            Name
+                                            Booking Date
                                         </th>
                                         <th>
-                                            Item Code
+                                               Destination 
+                                        </th>
+                                        <th>
+                                            User Id
                                         </th>
 
                                         <th>
-                                            Content
+                                           Trip Id
                                         </th>
-                                        <!-- <th>
-                                        No of images
-                                    </th> -->
-                                        <th>
-                                            MRP
-                                        </th>
+                                       
                                     </thead>
-
-
                                     <tbody>
-                                        <tr *ngFor="let product of products ; index as i" [attr.data-index]="i" (click)="ToProductDetails(product.$id ,product.ASIN)"
+                                        <!-- <tr *ngFor="let product of products ; index as i" [attr.data-index]="i" (click)="ToProductDetails(product.$id ,product.ASIN)"
                                             class="productRow">
                                             <td>
                                                 <a (click)="ToProductDetails(product.$id)">
@@ -68,15 +64,116 @@
                                             <td>
                                                 {{ product.Contents }}
                                             </td>
-                                            <!-- <td>
-                                            10
-                                            </td> -->
                                             <td class="text-primary">
                                                 {{ product.MRP }}
                                             </td>
 
-                                        </tr>
+                                        </tr> -->
+                                      <tr  class="productRow">
+                                        <td>
+                                            1
+                                        </td>
+                                        <td>
+                                           BID-101
+                                        </td>
+                                        <td>
+                                           25-12-2018
+                                        </td>
 
+                                        <td>
+                                            Miami Beach
+                                        </td>
+                                        <td>
+                                            UID-1005
+                                        </td>
+                                        <td>
+                                               TID-45862520
+                                        </td>
+                                      </tr>
+                                      <tr  class="productRow">
+                                            <td>
+                                                2
+                                            </td>
+                                            <td>
+                                               BID-102
+                                            </td>
+                                            <td>
+                                               25-12-2018
+                                            </td>
+    
+                                            <td>
+                                                San Fransisco
+                                            </td>
+                                            <td>
+                                                UID-1095
+                                            </td>
+                                            <td>
+                                                   TID-4582520
+                                            </td>
+                                          </tr>
+                                          <tr  class="productRow">
+                                                <td>
+                                                    3
+                                                </td>
+                                                <td>
+                                                   BID-105
+                                                </td>
+                                                <td>
+                                                   5-11-2018
+                                                </td>
+        
+                                                <td>
+                                                    Las Vegas
+                                                </td>
+                                                <td>
+                                                    UID-1001
+                                                </td>
+                                                <td>
+                                                       TID-45862654  
+                                                </td>
+                                              </tr>
+                                              <tr  class="productRow">
+                                                    <td>
+                                                        4
+                                                    </td>
+                                                    <td>
+                                                       BID-104
+                                                    </td>
+                                                    <td>
+                                                       26-12-2018
+                                                    </td>
+            
+                                                    <td>
+                                                        London
+                                                    </td>
+                                                    <td>
+                                                        UID-1055
+                                                    </td>
+                                                    <td>
+                                                           TID-10022520
+                                                    </td>
+                                                  </tr>
+                                                  <tr  class="productRow">
+                                                        <td>
+                                                            5
+                                                        </td>
+                                                        <td>
+                                                           BID-1010
+                                                        </td>
+                                                        <td>
+                                                           29-12-2018
+                                                        </td>
+                
+                                                        <td>
+                                                            Paris
+                                                        </td>
+                                                        <td>
+                                                            UID-1015
+                                                        </td>
+                                                        <td>
+                                                               TID-985020
+                                                        </td>
+                                                      </tr>
                                     </tbody>
                                 </table>
                             </div>

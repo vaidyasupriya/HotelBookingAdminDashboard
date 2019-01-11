@@ -33,20 +33,20 @@ export class UserProfileComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.http.get('https://signorawareapi.azurewebsites.net/api/users').
-      subscribe(data => {
-      this.users = data;
-      for ( const user of this.users) {
-         this.totalOrders = Object.keys(user.Orders).length;
-         console.log(user.Orders);
-       }
-      },
-        err => { console.log(err); }
-      );
+    // this.http.get('https://signorawareapi.azurewebsites.net/api/users').
+    //   subscribe(data => {
+    //   this.users = data;
+    //   for ( const user of this.users) {
+    //      this.totalOrders = Object.keys(user.Orders).length;
+    //      console.log(user.Orders);
+    //    }
+    //   },
+    //     err => { console.log(err); }
+    //   );
 
-      this.removeUserForm = new FormGroup({
-        'userId': new FormControl(null, [Validators.required]),
-      });
+      // this.removeUserForm = new FormGroup({
+      //   'userId': new FormControl(null, [Validators.required]),
+      // });
   }
 
 

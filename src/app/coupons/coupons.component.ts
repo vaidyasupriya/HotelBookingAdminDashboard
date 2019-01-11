@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-orders',
-  templateUrl: './orders.component.html',
-  styleUrls: ['./orders.component.scss']
+  selector: 'app-coupons',
+  templateUrl: './coupons.component.html',
+  styleUrls: ['./coupons.component.scss']
 })
-export class OrdersComponent implements OnInit {
+export class CouponsComponent implements OnInit {
   orderDetails: any;
   constructor(private http: HttpClient) { }
 
