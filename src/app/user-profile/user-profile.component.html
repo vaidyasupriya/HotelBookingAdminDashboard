@@ -40,7 +40,7 @@
                                         </th>
                                     </thead>
                                     <tbody>
-                                        <tr  class="usersRow">
+                                        <!-- <tr  class="usersRow">
                                             <td>
                                                  UID-10001
                                             </td>
@@ -154,9 +154,9 @@
                                                             <td class="text-primary">
                                                                 30
                                                             </td>
-                                                        </tr>
-                                        <!-- <tr *ngFor="let user of users ; index as i" [attr.data-index]="i" (click)="ToProfile(user.$id)"
-                                            class="usersRow">
+                                                        </tr> -->
+                                         <tr *ngFor="let user of users ; index as i" [attr.data-index]="i"
+                                          (click)=" toProfile(user.$id) "  class="usersRow">
                                             <td>
                                                 {{ user.$id }}
                                             </td>
@@ -167,18 +167,18 @@
                                                 {{ user.LastName }}
                                             </td>
                                             <td>
-                                                {{ user.BillingAddressCountry }}
+                                                {{ user.DateOfBirth }}
                                             </td>
                                             <td>
                                                 {{ user.Email }}
                                             </td>
                                             <td>
-                                                {{ user.Phone }}
+                                                {{ user.Nationality }}
                                             </td>
                                             <td class="text-primary">
                                                 {{ this.totalOrders }}
                                             </td>
-                                        </tr> -->
+                                        </tr> 
                                     </tbody>
                                 </table>
                             </div>

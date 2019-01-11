@@ -11,6 +11,10 @@ declare var $: any;
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
+  values: any;
+
+
+
   users: any;
   orders: any;
   totalOrders: any;
@@ -43,6 +47,15 @@ export class UserProfileComponent implements OnInit {
     //   },
     //     err => { console.log(err); }
     //   );
+          this.http.get('https://doyenowebapp2.azurewebsites.net/api/users').
+          subscribe(data => {
+            this.users = data;
+            for ( const user of this.users ) {
+              console.log(user);
+            }
+          }, error => {
+            console.log(error);
+          });
 
       // this.removeUserForm = new FormGroup({
       //   'userId': new FormControl(null, [Validators.required]),
@@ -51,10 +64,11 @@ export class UserProfileComponent implements OnInit {
 
 
 
-  ToProfile(user_id: any) {
+  toProfile( user_id: any ) {
     this.router.navigate(['/user-profile-detail']);
     this.dynamicapiservice.setSelectedUser(user_id);
   }
+
   // expand_UserTable() {
   //   this.isUserTrue = !this.isUserTrue;
   //   this.showUserList = !this.showUserList;
