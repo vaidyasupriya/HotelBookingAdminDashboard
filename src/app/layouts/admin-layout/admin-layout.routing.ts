@@ -1,63 +1,24 @@
 import { Routes } from '@angular/router';
-
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { TableListComponent } from '../../table-list/table-list.component';
-import { TypographyComponent } from '../../typography/typography.component';
-import { IconsComponent } from '../../icons/icons.component';
-import { MapsComponent } from '../../maps/maps.component';
-import { NotificationsComponent } from '../../notifications/notifications.component';
-import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import { ProductComponent } from '../../product/product.component';
+import { TransactionsComponent } from '../../transactions/transactions.component';
+import { UserProfileDetailedComponent } from '../../user-profile-detailed/user-profile-detailed.component';
+import { ProductDetailsComponent } from '../../product-details/product-details.component';
+import { OrdersComponent } from '../../orders/orders.component';
+import { DashboardProfilePageComponent } from '../../dashboard-profile-page/dashboard-profile-page.component';
+import { LoginComponent } from '../../login/login.component';
 
 export const AdminLayoutRoutes: Routes = [
-    // {
-    //   path: '',
-    //   children: [ {
-    //     path: 'dashboard',
-    //     component: DashboardComponent
-    // }]}, {
-    // path: '',
-    // children: [ {
-    //   path: 'userprofile',
-    //   component: UserProfileComponent
-    // }]
-    // }, {
-    //   path: '',
-    //   children: [ {
-    //     path: 'icons',
-    //     component: IconsComponent
-    //     }]
-    // }, {
-    //     path: '',
-    //     children: [ {
-    //         path: 'notifications',
-    //         component: NotificationsComponent
-    //     }]
-    // }, {
-    //     path: '',
-    //     children: [ {
-    //         path: 'maps',
-    //         component: MapsComponent
-    //     }]
-    // }, {
-    //     path: '',
-    //     children: [ {
-    //         path: 'typography',
-    //         component: TypographyComponent
-    //     }]
-    // }, {
-    //     path: '',
-    //     children: [ {
-    //         path: 'upgrade',
-    //         component: UpgradeComponent
-    //     }]
-    // }
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'table-list',     component: TableListComponent },
-    { path: 'typography',     component: TypographyComponent },
-    { path: 'icons',          component: IconsComponent },
-    { path: 'maps',           component: MapsComponent },
-    { path: 'notifications',  component: NotificationsComponent },
-    { path: 'upgrade',        component: UpgradeComponent },
+    { path: 'product',     component: ProductComponent },
+    { path: 'transaction',          component: TransactionsComponent },
+    { path: 'user-profile-detail',   component: UserProfileDetailedComponent },
+    { path: 'product-details',   component: ProductDetailsComponent },
+    { path: 'orders',   component: OrdersComponent },
+    { path: 'profile',   component: DashboardProfilePageComponent },
+    { path: 'login',   component: LoginComponent },
 ];

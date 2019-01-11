@@ -1,0 +1,116 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-profile">
+                    <div class="card-avatar">
+                        <a >
+                            <img class="img" src="./assets/img/faces/marc.jpg" />
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-category text-gray">ID: {{ userID }}</h6>
+                        <h4 class="card-title"> {{ user_FirstName }} {{ user_LastName }} </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Admin Profile</h4>
+                        <p class="card-category">Information</p>
+                    </div>
+                    <div class="card-body">
+                            <div class="row row-style">
+                             <div class="col-md-2">
+                                            <label >ID</label>
+                             </div>
+                             <div class="col-md-4">
+                                            <label >{{ userID }} </label>
+                             </div>
+                             <div class="col-md-2">
+                                            <label >DOB(AGE)</label>
+                             </div>
+                             <div class="col-md-4">
+                                            <label > {{ user_Age }}</label>
+                             </div>
+                            </div>
+                            <div class="row row-style" >
+                               <div class="col-md-2">
+                                    <label >First Name</label>
+                                </div>
+                                <div class="col-md-4">
+                                        <label > {{ user_FirstName }}</label>
+                                    </div>
+                                <div class="col-md-2">
+                                        <label >Last Name</label>
+                                </div>
+                                <div class="col-md-4">
+                                        <label > {{ user_LastName }}</label>
+                                    </div>
+                            </div>
+                            <div class="row row-style">
+                                <div class="col-md-2">
+                                            <label >City</label>
+                                </div>
+                                <div class="col-md-10">
+                                        <label > {{ user_BillingAddressCity }}</label>
+                                    </div>
+                            </div>
+                            <div class="row row-style">
+                                    <div class="col-md-2">
+                                                    <label >State</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                            <label > {{ user_BillingAddressState }}</label>
+                                        </div>
+                            </div>
+                            <div class="row row-style">
+                                    <div class="col-md-2">
+                                                    <label >Country</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                            <label > {{ user_BillingAddressCountry }}</label>
+                                        </div>
+                            </div>
+                            <div class="row row-style">
+                                    <div class="col-md-2">
+                                                    <label >Zip Code</label>
+                                        </div>
+                                        <div class="col-md-10">
+                                                <label >{{ user_BillingAddressZipcode }} </label>
+                                    </div>
+                            </div>
+                            <div class="row row-style">
+                                    <div class="col-md-2">
+                                                    <label >Email :</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                                    <label > {{ user_Email }} </label>
+                                    </div>
+                            </div>
+                            <div class="row row-style">
+                                    <div class="col-md-2 mb-0">
+                                                    <label >Phone :</label>
+                                    </div>
+                                    <div class="col-md-10 mb-0">
+                                                    <label > {{ user_Phone }}</label>
+                                    </div>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card mt-0 mb-0">
+                    <div class="card-body">
+                        <button mat-raised-button color="warn"  (click)="productFindToRemove()"> 
+                            Logout
+                          </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  

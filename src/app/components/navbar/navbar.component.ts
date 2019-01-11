@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
           this.sidebarVisible = false;
     }
 
-    ngOnInit(){
+    ngOnInit() {
       this.listTitles = ROUTES.filter(listTitle => listTitle);
       const navbar: HTMLElement = this.element.nativeElement;
       this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
@@ -93,7 +93,7 @@ export class NavbarComponent implements OnInit {
                 $layer.classList.add('visible');
             }, 100);
 
-            $layer.onclick = function() { //asign a function
+            $layer.onclick = function() { // asign a function
               body.classList.remove('nav-open');
               this.mobile_menu_visible = 0;
               $layer.classList.remove('visible');
@@ -109,7 +109,7 @@ export class NavbarComponent implements OnInit {
         }
     };
 
-    getTitle(){
+    getTitle() {
       var titlee = this.location.prepareExternalUrl(this.location.path());
       if(titlee.charAt(0) === '#'){
           titlee = titlee.slice( 2 );
@@ -122,5 +122,9 @@ export class NavbarComponent implements OnInit {
           }
       }
       return 'Dashboard';
+    }
+
+    toDashboardProfile() {
+        this.router.navigate(['/profile']);
     }
 }

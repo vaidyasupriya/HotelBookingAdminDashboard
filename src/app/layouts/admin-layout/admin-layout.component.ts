@@ -5,7 +5,7 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import PerfectScrollbar from 'perfect-scrollbar';
-
+import { DashboardComponent } from '../../dashboard/dashboard.component';
 @Component({
   selector: 'app-admin-layout',
   templateUrl: './admin-layout.component.html',
@@ -31,13 +31,13 @@ export class AdminLayoutComponent implements OnInit {
       const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
       const elemSidebar = <HTMLElement>document.querySelector('.sidebar .sidebar-wrapper');
 
-      this.location.subscribe((ev:PopStateEvent) => {
+      this.location.subscribe((ev: PopStateEvent) => {
           this.lastPoppedUrl = ev.url;
       });
-       this.router.events.subscribe((event:any) => {
+       this.router.events.subscribe((event: any) => {
           if (event instanceof NavigationStart) {
-             if (event.url != this.lastPoppedUrl)
-                 this.yScrollStack.push(window.scrollY);
+             if (event.url != this.lastPoppedUrl) {
+                 this.yScrollStack.push(window.scrollY); }
          } else if (event instanceof NavigationEnd) {
              if (event.url == this.lastPoppedUrl) {
                  this.lastPoppedUrl = undefined;

@@ -1,18 +1,16 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="card card-plain">
-            <div class="card-header card-header-danger row" >
-                <ul class="col-11 mb-0 pr-0 pl-0">
-                    <h4 class="card-title ">User List</h4>
-                    <p class="card-category"> Total registrered users!</p>
-                </ul>
-                <ul class="col-1 mb-0 pr-0 pl-0">
-                </ul>    
+            <div class="card-header card-header-danger">
+                <h4 class="card-title">Orders </h4>
             </div>
-
-            <div class="row" >
+            <div class="row">
                 <div class="col-md-12">
                     <div class="card">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title ">Total Order Details</h4>
+                            <p class="card-category">Here all the orders are added</p>
+                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table">
@@ -21,47 +19,41 @@
                                             ID
                                         </th>
                                         <th>
-                                            First Name
+                                            Order No.
                                         </th>
                                         <th>
-                                            Last Name
+                                            User Id
                                         </th>
                                         <th>
-                                            Country
+                                            Date
                                         </th>
                                         <th>
-                                            Email
+                                            Product Id
                                         </th>
                                         <th>
-                                            Phone
-                                        </th>
-                                        <th>
-                                            Total number Of Orders
+                                            Status
                                         </th>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let user of users ; index as i" [attr.data-index]="i" (click)="ToProfile(user.$id)"
-                                            class="usersRow">
+                                        <tr *ngFor="let orderDetail of orderDetails; index as i" [attr.data-index]="i" 
+                                        class="ordersRow">
                                             <td>
-                                                {{ user.$id }}
+                                                {{ orderDetail.$id }}
                                             </td>
                                             <td>
-                                                {{ user.FirstName }}
+                                              {{ orderDetail.OrderNumber }}                                           
                                             </td>
                                             <td>
-                                                {{ user.LastName }}
+                                                {{ orderDetail.User.$id }}                                            
                                             </td>
                                             <td>
-                                                {{ user.BillingAddressCountry }}
+                                                {{ orderDetail.Date }}                                            
                                             </td>
                                             <td>
-                                                {{ user.Email }}
-                                            </td>
-                                            <td>
-                                                {{ user.Phone }}
+                                                {{ orderDetail.ProductId }}
                                             </td>
                                             <td class="text-primary">
-                                                {{ this.totalOrders }}
+                                                {{ orderDetail.Status }}                                            
                                             </td>
                                         </tr>
                                     </tbody>
@@ -74,3 +66,4 @@
         </div>
     </div>
 </div>
+  

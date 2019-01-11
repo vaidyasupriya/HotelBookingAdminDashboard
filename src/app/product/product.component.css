@@ -1,4 +1,4 @@
-.usersRow:hover
+.productRow:hover
 {
   background-color: #E6E5F6;
   cursor: pointer;
@@ -21,7 +21,7 @@
   margin-top: 30px;
   margin-bottom: 30px;
 }
-.UserForm-parent
+.productForm-parent
 {
   padding-left: 20px;
   padding-right: 20px;
@@ -33,10 +33,18 @@
   box-shadow: none !important;
 }
 
-.add-user-icon{
+.add-products-icon{
   float: right;
 }
-.user-dropdown-icon-style
+.product-dropdown-icon-style
 {
   float: right;
 }
+
+/* .productRemoveButton{
+  display: none;
+}
+.productRemoveLabel
+{
+  display: none;
+} */

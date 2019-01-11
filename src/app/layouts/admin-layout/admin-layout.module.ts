@@ -6,11 +6,15 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { TableListComponent } from '../../table-list/table-list.component';
-import { TypographyComponent } from '../../typography/typography.component';
-import { IconsComponent } from '../../icons/icons.component';
-import { MapsComponent } from '../../maps/maps.component';
-import { NotificationsComponent } from '../../notifications/notifications.component';
-import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import { ProductComponent } from '../../product/product.component';
+import { TransactionsComponent } from '../../transactions/transactions.component';
+import { UserProfileDetailedComponent } from '../../user-profile-detailed/user-profile-detailed.component';
+import { ProductDetailsComponent } from '../../product-details/product-details.component';
+import { OrdersComponent } from '../../orders/orders.component';
+import { DashboardProfilePageComponent } from '../../dashboard-profile-page/dashboard-profile-page.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { LoginComponent } from '../../login/login.component';
 
 import {
   MatButtonModule,
@@ -31,16 +35,21 @@ import {
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    MatCardModule,
+    MatExpansionModule,
+    ReactiveFormsModule
   ],
   declarations: [
     DashboardComponent,
     UserProfileComponent,
     TableListComponent,
-    TypographyComponent,
-    IconsComponent,
-    MapsComponent,
-    NotificationsComponent,
-    UpgradeComponent,
+    ProductComponent,
+    TransactionsComponent,
+    UserProfileDetailedComponent,
+    ProductDetailsComponent,
+    OrdersComponent,
+    DashboardProfilePageComponent,
+    LoginComponent,
   ]
 })
 

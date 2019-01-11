@@ -1,8 +1,4 @@
-.dropdown-arrow
-{
-float:right;
-}
-.tableRow:hover
+.transactionsRow:hover
 {
   background-color: #E6E5F6;
   cursor: pointer;
