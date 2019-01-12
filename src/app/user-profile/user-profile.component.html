@@ -154,9 +154,9 @@
                                                             </td>
                                                         </tr> -->
                                          <tr *ngFor="let user of users ; index as i" [attr.data-index]="i"
-                                          (click)=" toProfile(user.$id) "  class="usersRow">
+                                          (click)=" toProfile(user.Id) "  class="usersRow">
                                             <td>
-                                                {{ user.$id }}
+                                                {{ user.Id }}
                                             </td>
                                             <td>
                                                 {{ user.FirstName }}
