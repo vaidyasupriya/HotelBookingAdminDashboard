@@ -1,4 +1,4 @@
-.productRow:hover
+.bookingRow:hover
 {
   background-color: #E6E5F6;
   cursor: pointer;
@@ -21,7 +21,7 @@
   margin-top: 30px;
   margin-bottom: 30px;
 }
-.productForm-parent
+.bookingForm-parent
 {
   padding-left: 20px;
   padding-right: 20px;
@@ -33,18 +33,14 @@
   box-shadow: none !important;
 }
 
-.add-products-icon{
+.add-booking-icon{
   float: right;
 }
-.product-dropdown-icon-style
+.booking-dropdown-icon-style
 {
   float: right;
 }
-
-/* .productRemoveButton{
-  display: none;
-}
-.productRemoveLabel
+.navbar-form 
 {
-  display: none;
-} */
+  margin-top: 20px;
+}

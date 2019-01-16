@@ -33,14 +33,14 @@ export class BookingsComponent implements OnInit {
   showdeleteButton = false;
 
   panelOpenState = false;
-  isProductTrue = false;
-  showProductList = true;
-  showProductForm = false;
-  showProductRemovalForm = false;
-  addProductForm: FormGroup;
+  isbookingTrue = false;
+  showbookingList = true;
+  showbookingForm = false;
+  showbookingRemovalForm = false;
+  addbookingForm: FormGroup;
   userInfo: FormGroup;
-  removeProductForm: FormGroup;
-  products: any;
+  removebookingForm: FormGroup;
+  bookings: any;
   transactions: any;
   id: any;
   product: any[] = [];
@@ -48,16 +48,16 @@ export class BookingsComponent implements OnInit {
   list: any;
   abc: Array < any > = [];
   @Output() toDetails = new EventEmitter();
-  newProduct: BookingsAdd = new BookingsAdd();
+  newbooking: BookingsAdd = new BookingsAdd();
   foundAsinValue: any;
   foundIdValue: any;
   constructor(private router: Router, private http: HttpClient, private dynamicapiservice: dynamicApiService) {}
   ngOnInit() {
     this.http.get('https://signorawareapi.azurewebsites.net/api/products').
     subscribe(data => {
-        this.products = data;
-        const totalLength = Object.keys(this.products).length;
-        for (const product of this.products) {
+        this.bookings = data;
+        const totalLength = Object.keys(this.bookings).length;
+        for (const product of this.bookings) {
           this.id = product.$id;
           console.log(product);
         }
@@ -67,7 +67,7 @@ export class BookingsComponent implements OnInit {
       }
     );
     /// for pushing the code to db
-    this.addProductForm = new FormGroup({
+    this.addbookingForm = new FormGroup({
       'asin': new FormControl(null, [Validators.required]),
       'name': new FormControl(null, [Validators.required]),
       'itemCode': new FormControl(null, [Validators.required]),
@@ -81,34 +81,34 @@ export class BookingsComponent implements OnInit {
       'bullet_6': new FormControl(null, [Validators.required]),
     });
     /// for pushing the code to db
-    this.removeProductForm = new FormGroup({
+    this.removebookingForm = new FormGroup({
       'asin': new FormControl(null, [Validators.required]),
     });
     /// for pushing the code to db
   }
-  ToProductDetails($id: any, ASIN: any) {
-    this.router.navigate(['/product-details']);
-    this.dynamicapiservice.setSelectedProduct($id, ASIN);
+  ToBookingDetails($id: any, ASIN: any) {
+    this.router.navigate(['/booking-details']);
+    // this.dynamicapiservice.setSelectedProduct($id, ASIN);
   }
-  openAddProducts() {
-    this.showProductForm = !this.showProductForm;
+  openAddbooking() {
+    this.showbookingForm = !this.showbookingForm;
     window.scrollTo(0, 0);
   }
-  newProductSubmit(from, align) {
+  newbookingSubmit(from, align) {
     alert('if is submitted');
-    this.newProduct.asin = this.addProductForm.get('asin').value;
-    this.newProduct.name = this.addProductForm.get('name').value;
-    this.newProduct.itemCode = this.addProductForm.get('itemCode').value;
-    this.newProduct.mrp = this.addProductForm.get('mrp').value;
-    this.newProduct.contents = this.addProductForm.get('contents').value;
-    this.newProduct.bullet_1 = this.addProductForm.get('bullet_1').value;
-    this.newProduct.bullet_2 = this.addProductForm.get('bullet_2').value;
-    this.newProduct.bullet_3 = this.addProductForm.get('bullet_3').value;
-    this.newProduct.bullet_4 = this.addProductForm.get('bullet_4').value;
-    this.newProduct.bullet_5 = this.addProductForm.get('bullet_5').value;
-    this.newProduct.bullet_6 = this.addProductForm.get('bullet_6').value;
-    console.log(this.newProduct);
-    this.http.post('https://signorawareapi.azurewebsites.net/api/products/', this.newProduct).
+    this.newbooking.asin = this.addbookingForm.get('asin').value;
+    this.newbooking.name = this.addbookingForm.get('name').value;
+    this.newbooking.itemCode = this.addbookingForm.get('itemCode').value;
+    this.newbooking.mrp = this.addbookingForm.get('mrp').value;
+    this.newbooking.contents = this.addbookingForm.get('contents').value;
+    this.newbooking.bullet_1 = this.addbookingForm.get('bullet_1').value;
+    this.newbooking.bullet_2 = this.addbookingForm.get('bullet_2').value;
+    this.newbooking.bullet_3 = this.addbookingForm.get('bullet_3').value;
+    this.newbooking.bullet_4 = this.addbookingForm.get('bullet_4').value;
+    this.newbooking.bullet_5 = this.addbookingForm.get('bullet_5').value;
+    this.newbooking.bullet_6 = this.addbookingForm.get('bullet_6').value;
+    console.log(this.newbooking);
+    this.http.post('https://signorawareapi.azurewebsites.net/api/products/', this.newbooking).
     subscribe((data: any) => {
         const addProduct: any = JSON.stringify(data);
         console.log(addProduct);
@@ -133,22 +133,22 @@ export class BookingsComponent implements OnInit {
   });
   }
 
-  expand_ProductTable() {
-    this.isProductTrue = !this.isProductTrue;
-    this.showProductList = !this.showProductList;
+  expand_bookingTable() {
+    this.isbookingTrue = !this.isbookingTrue;
+    this.showbookingList = !this.showbookingList;
   }
 
-  openRemoveProducts() {
-    this.showProductRemovalForm = !this.showProductRemovalForm;
+  openRemovebooking() {
+    this.showbookingRemovalForm = !this.showbookingRemovalForm;
   }
-  productFindToRemove() {
-    console.log(this.removeProductForm.value.asin);
+  bookingFindToRemove() {
+    console.log(this.removebookingForm.value.asin);
     this.http.get('https://signorawareapi.azurewebsites.net/api/products').
     subscribe(data => {
-        this.products = data;
-        const totalLength = Object.keys(this.products).length;
-        for (const product of this.products) {
-         if (this.removeProductForm.value.asin === product.ASIN) {
+        this.bookings = data;
+        const totalLength = Object.keys(this.bookings).length;
+        for (const product of this.bookings) {
+         if (this.removebookingForm.value.asin === product.ASIN) {
             this.foundAsinValue = product.Name;
             this.foundIdValue = product.Id;
             this.showFindButton = false;
@@ -165,7 +165,7 @@ export class BookingsComponent implements OnInit {
   productRemoval(from, align) {
     this.http.delete('https://signorawareapi.azurewebsites.net/api/products/' + this.foundIdValue).
     subscribe(data => {
-        this.products = data;
+        this.bookings = data;
         window.location.reload();
       },
       err => {

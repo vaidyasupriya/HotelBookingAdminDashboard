@@ -4,16 +4,22 @@
     <div class="container-fluid">
         <div class="card card-plain">
             <div class="card-header card-header-danger">
-                <h4 class="card-title">Transactions</h4>
+                <h4 class="card-title">Trips</h4>
            
             </div>
             <div class="row">
+                    <div class="col-md-9 "></div>
+                    <form class="navbar-form col-md-3 ">
+                            <div class="input-group no-border">
+                                <input type="text" value="" class="form-control" placeholder="Search...">
+                                <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                    <i class="material-icons">search</i>
+                                    <div class="ripple-container"></div>
+                                </button>
+                            </div>
+                        </form>
               <div class="col-md-12">
                   <div class="card">
-                      <!-- <div class="card-header card-header-danger">
-                          <h4 class="card-title ">Total Transaction Details</h4>
-                          <p class="card-category">Here all the Voucher transaction details are added</p>
-                      </div> -->
                       <div class="card-body">
                           <div class="table-responsive">
                               <table class="table">
@@ -22,35 +28,111 @@
                                           ID
                                       </th>
                                       <th>
-                                          Code
+                                         User Id
                                       </th>
                                       <th>
-                                          Account Number
+                                         Booking Id
                                       </th>
                                       <th>
-                                          Program Code
+                                         Destination
                                       </th>
                                       <th>
-                                          Merchant Code
+                                          Booking Date
                                       </th>
-                                      <th>
-                                          Shop Code
-                                      </th>
-                                      <th>
-                                          Ammount
-                                      </th>
-                                      <th>
-                                         Terminal SSW
-                                      </th>
-                                      <th>
-                                          Channel
-                                      </th>
-                                      <th>
-                                          Order Id
-                                      </th>
+                                     
                                   </thead>
                                   <tbody>
-                                      <tr *ngFor="let transactionDetail of transactionDetails; index as i" 
+                                      <tr class="tripsRow" (click)="toDetails()">
+                                                <td>
+                                                    TID-101
+                                                </td>
+                                                <td>
+                                                   UID-12
+                                                </td>
+                                                <td>
+                                                   BID-125468
+                                                </td>
+                                                <td>
+                                                   Miami Beach
+                                                </td>
+                                                <td>
+                                                    12-12-2018
+                                                </td>
+                                  
+                                      </tr>
+                                      <tr class="tripsRow">
+                                            <td>
+                                                TID-102
+                                            </td>
+                                            <td>
+                                               UID-13
+                                            </td>
+                                            <td>
+                                               BID-125457
+                                            </td>
+                                            <td>
+                                               San Fransisco
+                                            </td>
+                                            <td>
+                                                13-12-2018
+                                            </td>
+                              
+                                  </tr>
+                                  <tr class="tripsRow">
+                                        <td>
+                                            TID-103
+                                        </td>
+                                        <td>
+                                           UID-45
+                                        </td>
+                                        <td>
+                                           BID-125888
+                                        </td>
+                                        <td>
+                                         Chicago
+                                        </td>
+                                        <td>
+                                            14-12-2018
+                                        </td>
+                          
+                              </tr>
+                              <tr class="tripsRow">
+                                    <td>
+                                        TID-104
+                                    </td>
+                                    <td>
+                                       UID-15
+                                    </td>
+                                    <td>
+                                       BID-125511
+                                    </td>
+                                    <td>
+                                       Mexico City
+                                    </td>
+                                    <td>
+                                        14-12-2018
+                                    </td>
+                      
+                          </tr>
+                          <tr class="tripsRow">
+                                <td>
+                                    TID-105
+                                </td>
+                                <td>
+                                   UID-46
+                                </td>
+                                <td>
+                                   BID-125985
+                                </td>
+                                <td>
+                                   Tokyo
+                                </td>
+                                <td>
+                                    12-12-2018
+                                </td>
+                  
+                      </tr>
+                                      <!-- <tr *ngFor="let transactionDetail of transactionDetails; index as i" 
                                       [attr.data-index]="i" class="transactionsRow">
                                           <td>
                                           </td>
@@ -63,8 +145,8 @@
                                           <td>
                                           </td>
                                           <td class="text-primary">
-                                          </td>
-                                      </tr>
+                                          </td> -->
+                                      <!-- </tr> -->
                                   </tbody>
                               </table>
                           </div>

@@ -7,3 +7,32 @@ float:right;
   background-color: #E6E5F6;
   cursor: pointer;
 }
+.bookingRow:hover
+{
+  background-color: #E6E5F6;
+  cursor: pointer;
+}
+.couponsRow:hover
+{
+  background-color: #E6E5F6;
+  cursor: pointer;
+}
+.marginRow:hover
+{
+  background-color: #E6E5F6;
+  cursor: pointer;
+}
+.travellersRow:hover
+{
+  background-color: #E6E5F6;
+  cursor: pointer;
+}
+.tripsRow:hover
+{
+  background-color: #E6E5F6;
+  cursor: pointer;
+}
+.navbar-form 
+{
+  margin-top: 20px;
+}

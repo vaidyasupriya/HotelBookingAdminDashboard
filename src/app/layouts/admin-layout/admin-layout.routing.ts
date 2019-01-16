@@ -11,6 +11,9 @@ import { DashboardProfilePageComponent } from '../../dashboard-profile-page/dash
 import { LoginComponent } from '../../login/login.component';
 import { MarginComponent } from '../../margin/margin.component';
 import { TravellersComponent } from '../../travellers/travellers.component';
+import { TripsDetailsComponent } from '../../trips/trips-details/trips-details.component';
+import { BookingDetailsComponent } from '../../bookings/booking-details/booking-details.component';
+
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -18,6 +21,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'table-list',     component: TableListComponent },
     { path: 'bookings',     component: BookingsComponent },
     { path: 'trips',          component: TripsComponent },
+    { path: 'tripsDetails',   component: TripsDetailsComponent },
     { path: 'user-profile-detail',   component: UserProfileDetailedComponent },
     { path: 'product-details',   component: ProductDetailsComponent },
     { path: 'coupons',   component: CouponsComponent },
@@ -25,4 +29,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'login',   component: LoginComponent },
     { path: 'margin',   component: MarginComponent },
     { path: 'travellers',   component: TravellersComponent },
+    { path: 'booking-details',   component: BookingDetailsComponent },
+
 ];

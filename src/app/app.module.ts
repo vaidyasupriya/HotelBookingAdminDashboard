@@ -40,6 +40,8 @@ import {MatCardModule} from '@angular/material/card';
 import { DashboardProfilePageComponent } from './dashboard-profile-page/dashboard-profile-page.component';
 import { MarginComponent } from './margin/margin.component';
 import { TravellersComponent } from './travellers/travellers.component';
+import { TripsDetailsComponent } from './trips/trips-details/trips-details.component';
+import { BookingDetailsComponent } from './bookings/booking-details/booking-details.component';
 
 @NgModule({
   imports: [
@@ -72,13 +74,7 @@ import { TravellersComponent } from './travellers/travellers.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    // TravellersComponent,
-    // MarginComponent,
-    // LoginComponent,
-    // DashboardProfilePageComponent,
-    // OrdersComponent,
-    // ProductDetailsComponent,
-    // DashboardComponent
+
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -76,10 +76,11 @@
                       <div class="ct-chart" id="dailySalesChart"></div>
                   </div>
                   <div class="card-body">
-                      <h4 class="card-title">Daily Sales</h4>
+                      <h4 class="card-title">Daily Bookings.</h4>
                       <p class="card-category">
-                          <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>
+                          <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today's bookings.</p>
                   </div>
+        
                   <div class="card-footer">
                       <div class="stats">
                           <i class="material-icons">access_time</i> updated 4 minutes ago
@@ -125,55 +126,167 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-success">
-                        <h4 class="card-title ">Latest Orders</h4>
+                        <h4 class="card-title ">Latest Bookings</h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table">
-                                <thead class=" text-primary">
-                                    <th>
-                                        ID
-                                    </th>
-                                    <th>
-                                        Order No.
-                                    </th>
-                                    <th>
-                                        User Id
-                                    </th>
-                                    <th>
-                                        Date
-                                    </th>
-                                    <th>
-                                        Product Id
-                                    </th>
-                                    <th>
-                                        Status
-                                    </th>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let orderDetail of orderDetails; index as i" [attr.data-index]="i" 
-                                    class="ordersRow">
-                                        <td>
-                                            {{ orderDetail.$id }}
-                                        </td>
-                                        <td>
-                                          {{ orderDetail.OrderNumber }}                                           
-                                        </td>
-                                        <td>
-                                            {{ orderDetail.User.$id }}                                            
-                                        </td>
-                                        <td>
-                                            {{ orderDetail.Date }}                                            
-                                        </td>
-                                        <td>
-                                            {{ orderDetail.ProductId }}
-                                        </td>
-                                        <td class="text-primary">
-                                            {{ orderDetail.Status }}                                            
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                <table class="table">
+                                        <thead class=" text-primary">
+                                            <th>
+    
+                                                ID
+                                            </th>
+                                            <th>
+                                                Booking Id
+                                            </th>
+                                            <th>
+                                                Booking Date
+                                            </th>
+                                            <th>
+                                                   Destination 
+                                            </th>
+                                            <th>
+                                                User Id
+                                            </th>
+    
+                                            <th>
+                                               Trip Id
+                                            </th>
+                                           
+                                        </thead>
+                                        <tbody>
+                                            <!-- <tr *ngFor="let booking of bookings ; index as i" [attr.data-index]="i" (click)="TobookingDetails(booking.$id ,booking.ASIN)"
+                                                class="productRow">
+                                                <td>
+                                                    <a (click)="ToProductDetails(product.$id)">
+                                                        {{ product.$id }}
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    {{ product.ASIN }}
+                                                </td>
+                                                <td>
+                                                    {{ product.Name }}
+                                                </td>
+    
+                                                <td>
+                                                    {{ product.ItemCode }}
+                                                </td>
+                                                <td>
+                                                    {{ product.Contents }}
+                                                </td>
+                                                <td class="text-primary">
+                                                    {{ product.MRP }}
+                                                </td>
+    
+                                            </tr> -->
+                                          <tr  class="bookingRow" (click)="ToBookingDetails()">
+                                            <td>
+                                                1
+                                            </td>
+                                            <td>
+                                               BID-101
+                                            </td>
+                                            <td>
+                                               31-12-2018
+                                            </td>
+    
+                                            <td>
+                                                Mexico
+                                            </td>
+                                            <td>
+                                                UID-1005
+                                            </td>
+                                            <td>
+                                                   TID-45862520
+                                            </td>
+                                          </tr>
+                                          <tr  class="bookingRow">
+                                                <td>
+                                                    2
+                                                </td>
+                                                <td>
+                                                   BID-102
+                                                </td>
+                                                <td>
+                                                   25-12-2018
+                                                </td>
+        
+                                                <td>
+                                                    San Fransisco
+                                                </td>
+                                                <td>
+                                                    UID-1095
+                                                </td>
+                                                <td>
+                                                       TID-4582520
+                                                </td>
+                                              </tr>
+                                              <tr  class="bookingRow">
+                                                    <td>
+                                                        3
+                                                    </td>
+                                                    <td>
+                                                       BID-105
+                                                    </td>
+                                                    <td>
+                                                       5-11-2018
+                                                    </td>
+            
+                                                    <td>
+                                                        Las Vegas
+                                                    </td>
+                                                    <td>
+                                                        UID-1001
+                                                    </td>
+                                                    <td>
+                                                           TID-45862654  
+                                                    </td>
+                                                  </tr>
+                                                  <tr  class="bookingRow">
+                                                        <td>
+                                                            4
+                                                        </td>
+                                                        <td>
+                                                           BID-104
+                                                        </td>
+                                                        <td>
+                                                           26-12-2018
+                                                        </td>
+                
+                                                        <td>
+                                                            London
+                                                        </td>
+                                                        <td>
+                                                            UID-1055
+                                                        </td>
+                                                        <td>
+                                                               TID-10022520
+                                                        </td>
+                                                      </tr>
+                                                      <tr  class="bookingRow">
+                                                            <td>
+                                                                5
+                                                            </td>
+                                                            <td>
+                                                               BID-1010
+                                                            </td>
+                                                            <td>
+                                                               29-12-2018
+                                                            </td>
+                    
+                                                            <td>
+                                                                Paris
+                                                            </td>
+                                                            <td>
+                                                                UID-1015
+                                                            </td>
+                                                            <td>
+                                                                   TID-985020
+                                                            </td>
+                                                          </tr>
+                                        </tbody>
+                                    </table>
                         </div>
                     </div>
                 </div>
@@ -193,7 +306,7 @@
                                   <li class="nav-item">
                                       <a mat-button class="nav-link active" href="#profile" data-toggle="tab">
                                           <!-- <i class="material-icons">bug_report</i>  -->
-                                          Product
+                                          Destinations
                                           <div class="ripple-container"></div>
                                       </a>
                                   </li>
@@ -207,7 +320,7 @@
                                   <li class="nav-item">
                                       <a mat-button class="nav-link" href="#settings" data-toggle="tab">
                                           <!-- <i class="material-icons">cloud</i>  -->
-                                          Orders
+                                          Bookings
                                           <div class="ripple-container"></div>
                                       </a>
                                   </li>
@@ -221,36 +334,36 @@
                             <div class="table-responsive">
                                 <table class="table table-hover">
                                     <thead class="text-warning">
-                                        <th>ID</th>
-                                        <th>ASIN</th>
-                                        <th>Name</th>
-                                        <th>MRP</th>
+                                        <th>Dest. Code</th>
+                                        <th>City</th>
+                                        <th>Country</th>
+                                        <th>Bookings count</th>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>145</td>
-                                            <td>B5656554</td>
-                                            <td>Signoraware Bottle</td>
+                                            <td>67H</td>
+                                            <td>Miami</td>
+                                            <td>USA</td>
                                             <td>100</td>
                                             
                                         </tr>
                                         <tr>
-                                            <td>155</td>
-                                            <td>B5656554</td>
-                                            <td>Signoraware Kettle</td>
-                                            <td>800</td>
+                                                <td>87H</td>
+                                                <td>Texas</td>
+                                                <td>USA</td>
+                                                <td>89</td>
                                         </tr>
                                         <tr>
-                                            <td>5</td>
-                                            <td>B5658854</td>
-                                            <td>Signoraware Pot</td>
-                                            <td>520</td>
+                                                <td>62Y</td>
+                                                <td>Paris</td>
+                                                <td>France</td>
+                                                <td>88</td>
                                         </tr>
                                         <tr>
-                                            <td>145</td>
-                                            <td>B5656464</td>
-                                            <td>Signoraware Cooker</td>
-                                            <td>800</td>
+                                                <td>56R</td>
+                                                <td>Tokyo</td>
+                                                <td>JApan</td>
+                                                <td>87</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -303,36 +416,38 @@
                             <div class="table-responsive">
                                 <table class="table table-hover">
                                     <thead class="text-warning">
-                                        <th>ID</th>
-                                        <th>Order No</th>
-                                        <th>Date</th>
-                                        <th>Product Id</th>
+                                            <th>
+
+                                                    ID
+                                                </th>
+                                                <th>
+                                                    Booking Id
+                                                </th>
+                                                <th>
+                                                    Booking Date
+                                                </th>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>1456</td>
                                             <td>8759546</td>
                                             <td>10-12-2018</td>
-                                            <td>8758</td>
                                             
                                         </tr>
                                         <tr>
                                             <td>8556</td>
                                             <td>1029546</td>
                                             <td>01-01-2019</td>
-                                            <td>8758</td>
                                         </tr>
                                         <tr>
                                             <td>9056</td>
                                             <td>8509546</td>
                                             <td>10-01-2019</td>
-                                            <td>8458</td>
                                         </tr>
                                         <tr>
                                             <td>9080</td>
                                             <td>8759475</td>
                                             <td>12-01-2019</td>
-                                            <td>7858</td>
                                         </tr>
                                     </tbody>
                                 </table>

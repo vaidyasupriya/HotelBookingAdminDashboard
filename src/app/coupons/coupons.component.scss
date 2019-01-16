@@ -1,5 +1,47 @@
-.ordersRow:hover
+.couponsRow:hover
 {
   background-color: #E6E5F6;
   cursor: pointer;
+}
+
+.example-full-width
+{
+  width:100%;
+}
+.example-card
+{
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+.example-card-ul
+{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.couponForm-parent
+{
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 30px;
+}
+.expansion-panel-style
+{
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.add-coupons-icon{
+  float: right;
+}
+.Coupon-dropdown-icon-style
+{
+  float: right;
+}
+.navbar-form 
+{
+  margin-top: 20px;
 }

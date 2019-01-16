@@ -2,20 +2,31 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="card card-plain">
-            <div class="card-header card-header-danger row" (click)='expand_ProductTable()'>
+            <div class="card-header card-header-danger row" (click)='expand_bookingTable()'>
                     <ul class="col-11 mb-0 pr-0 pl-0">
                         <h4 class="card-title ">Bookings Table</h4>
                     </ul>
                     <ul class="col-1 mb-0 pr-0 pl-0">
-                        <i class="material-icons dropdown-arrow product-dropdown-icon-style"   
-                        *ngIf="isProductTrue">keyboard_arrow_down</i>
-                        <i class="material-icons dropdown-arrow product-dropdown-icon-style" 
-                         *ngIf="!isProductTrue">keyboard_arrow_up</i>
+                        <i class="material-icons dropdown-arrow booking-dropdown-icon-style"   
+                        *ngIf="isbookingTrue">keyboard_arrow_down</i>
+                        <i class="material-icons dropdown-arrow booking-dropdown-icon-style" 
+                         *ngIf="!isbookingTrue">keyboard_arrow_up</i>
                     </ul>
                 </div>
 
-            <div class="row" *ngIf="showProductList">
+            <div class="row" *ngIf="showbookingList">
+                    <div class="col-md-9 "></div>
+                    <form class="navbar-form col-md-3 ">
+                            <div class="input-group no-border">
+                                <input type="text" value="" class="form-control" placeholder="Search...">
+                                <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                    <i class="material-icons">search</i>
+                                    <div class="ripple-container"></div>
+                                </button>
+                            </div>
+                        </form>
                 <div class="col-md-12">
+
                     <div class="card">
                         <div class="card-body">
                             <div class="table-responsive">
@@ -44,7 +55,7 @@
                                        
                                     </thead>
                                     <tbody>
-                                        <!-- <tr *ngFor="let product of products ; index as i" [attr.data-index]="i" (click)="ToProductDetails(product.$id ,product.ASIN)"
+                                        <!-- <tr *ngFor="let booking of bookings ; index as i" [attr.data-index]="i" (click)="TobookingDetails(booking.$id ,booking.ASIN)"
                                             class="productRow">
                                             <td>
                                                 <a (click)="ToProductDetails(product.$id)">
@@ -69,7 +80,7 @@
                                             </td>
 
                                         </tr> -->
-                                      <tr  class="productRow">
+                                      <tr  class="bookingRow" (click)="ToBookingDetails()">
                                         <td>
                                             1
                                         </td>
@@ -90,7 +101,7 @@
                                                TID-45862520
                                         </td>
                                       </tr>
-                                      <tr  class="productRow">
+                                      <tr  class="bookingRow">
                                             <td>
                                                 2
                                             </td>
@@ -111,7 +122,7 @@
                                                    TID-4582520
                                             </td>
                                           </tr>
-                                          <tr  class="productRow">
+                                          <tr  class="bookingRow">
                                                 <td>
                                                     3
                                                 </td>
@@ -132,7 +143,7 @@
                                                        TID-45862654  
                                                 </td>
                                               </tr>
-                                              <tr  class="productRow">
+                                              <tr  class="bookingRow">
                                                     <td>
                                                         4
                                                     </td>
@@ -153,7 +164,7 @@
                                                            TID-10022520
                                                     </td>
                                                   </tr>
-                                                  <tr  class="productRow">
+                                                  <tr  class="bookingRow">
                                                         <td>
                                                             5
                                                         </td>
@@ -182,172 +193,6 @@
                 </div>
             </div>
         </div>
-        <div class="card card-plain">
-            <div class="card-header card-header-danger row" (click)="openAddProducts()">
-                <ul class="col-11 mb-0 pr-0 pl-0">
-                    <h4 class="card-title"> Add New Products</h4>
-                </ul>
-                <ul class="col-1 mb-0 pr-0 pl-0">
-                    <i class="material-icons add-products-icon" > add_circle
-                    </i>
-                </ul>
-            </div>
-            <div class="row mr-0 ml-0"  *ngIf="showProductForm">
-                <mat-card class="example-card">
-                    <mat-card-content class="row ">
-                        <ul class="col-6 example-card-ul">
-                            <form class="example-form" [formGroup]="addProductForm" onsubmit="newProductSubmit()" >
-                                <table class="example-full-width" cellspacing="0">
-                                    <tr>
-                                        <td>
-                                            <mat-form-field class="example-full-width">
-                                                <input matInput  placeholder="ASIN"  name="asin"
-                                                formControlName="asin" required>
-                                            </mat-form-field>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <mat-form-field class="example-full-width">
-                                                <input matInput placeholder="Item Code"  name="itemCode"  formControlName="itemCode"
-                                                    required>
-                                            </mat-form-field>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <mat-form-field class="example-full-width">
-                                                <input matInput placeholder="Name"  name="name" formControlName="name"
-                                                    required>
-                                            </mat-form-field>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <mat-form-field class="example-full-width">
-                                                <input matInput placeholder="Contents"  name="contents" formControlName="contents"
-                                                    required>
-                                            </mat-form-field>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <mat-form-field class="example-full-width">
-                                                <input matInput placeholder="MRP"  name="mrp" formControlName="mrp"  required>
-                                            </mat-form-field>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <mat-form-field class="example-full-width">
-                                                <input matInput placeholder="Data"  name="data_1" formControlName="bullet_1"
-                                                    required>
-                                            </mat-form-field>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <mat-form-field class="example-full-width">
-                                                <input matInput placeholder="Data" formControlName="bullet_2" name="data_2">
-                                            </mat-form-field>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <mat-form-field class="example-full-width">
-                                                <input matInput placeholder="Data" formControlName="bullet_3" name="data_3">
-                                            </mat-form-field>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <mat-form-field class="example-full-width">
-                                                <input matInput placeholder="Data"  formControlName="bullet_4" name="data_4">
-                                            </mat-form-field>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <mat-form-field class="example-full-width">
-                                                <input matInput placeholder="Data" formControlName="bullet_5" name="data_5">
-                                            </mat-form-field>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <mat-form-field class="example-full-width">
-                                                <input matInput placeholder="Data" formControlName="bullet_6" name="data_6">
-                                            </mat-form-field>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </form>
-                        </ul>
-                        <ul class="col-6"></ul>
-
-                        <!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> -->
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <div class="productForm-parent row">
-             
-                                <button mat-raised-button color="primary"  (click)="newProductSubmit('top','right')">Submit</button>
-                        </div>
-                    </mat-card-actions>
-                </mat-card>
-
-
-
-            </div>
-        </div>
-        <div class="card card-plain">
-            <div class="card-header card-header-danger row" (click)="openRemoveProducts()">
-                <ul class="col-11 mb-0 pr-0 pl-0">
-                    <h4 class="card-title"> Remove a Product</h4>
-                </ul>
-                <ul class="col-1 mb-0 pr-0 pl-0">
-                    <i class="material-icons add-products-icon" > add_circle
-                    </i>
-                </ul>
-            </div>
-            <div class="row mr-0 ml-0"  *ngIf="showProductRemovalForm">
-                <mat-card class="example-card">
-                    <mat-card-content class="row ">
-                        <ul class="col-6 example-card-ul">
-                            <form class="example-form" [formGroup]="removeProductForm" onsubmit="removeProductSubmit()" >
-                                <table class="example-full-width" cellspacing="0">
-                                    <tr>
-                                        <td>
-                                            <mat-form-field class="example-full-width">
-                                                <input matInput  placeholder="ASIN"  name="asin"
-                                                formControlName="asin" required>
-                                            </mat-form-field>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </form>
-                        </ul>
-                        <ul class="col-6"></ul>
-                    </mat-card-content>
-                    <mat-card-actions>
-                           
-                        <div class="productForm-parent row" *ngIf="showFindButton">
-                                <button mat-raised-button color="primary"  class="productFindButton"
-                                (click)="productFindToRemove()">
-                                    Find</button>
-                        </div>
-                        <div class="productRemoveLabel" *ngIf="showFindLabel">
-                                <h4>Do you want to remove <b>"{{ foundAsinValue }}"</b> from records ?</h4>
-                        </div>
-                        <div class="productForm-parent row" *ngIf="showdeleteButton">
-                            <button mat-raised-button color="primary" class="productRemoveButton"
-                             (click)="productRemoval('top','right')">Remove</button>
-                        </div>
-                    </mat-card-actions>
-                </mat-card>
-
-
-
-            </div>
-        </div>
+        
     </div>
 </div>

@@ -1,16 +1,29 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="card card-plain">
-            <div class="card-header card-header-danger">
-                <h4 class="card-title">Orders </h4>
+
+            <div class="card-header card-header-danger row" (click)='expand_CouponsTable()'>
+                <ul class="col-11 mb-0 pr-0 pl-0">
+                    <h4 class="card-title ">Coupons Table</h4>
+                </ul>
+                <ul class="col-1 mb-0 pr-0 pl-0">
+                    <i class="material-icons dropdown-arrow Coupon-dropdown-icon-style" *ngIf="isCouponTrue">keyboard_arrow_down</i>
+                    <i class="material-icons dropdown-arrow Coupon-dropdown-icon-style" *ngIf="!isCouponTrue">keyboard_arrow_up</i>
+                </ul>
             </div>
-            <div class="row">
+            <div class="row" *ngIf="showCouponsList">
+                    <div class="col-md-9 "></div>
+                    <form class="navbar-form col-md-3 ">
+                            <div class="input-group no-border">
+                                <input type="text" value="" class="form-control" placeholder="Search...">
+                                <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                    <i class="material-icons">search</i>
+                                    <div class="ripple-container"></div>
+                                </button>
+                            </div>
+                        </form>
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header card-header-danger">
-                            <h4 class="card-title ">Total Order Details</h4>
-                            <p class="card-category">Here all the orders are added</p>
-                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table">
@@ -19,23 +32,29 @@
                                             ID
                                         </th>
                                         <th>
-                                            Order No.
+                                            Coupon Code
                                         </th>
                                         <th>
-                                            User Id
+                                            Validity
                                         </th>
                                         <th>
-                                            Date
+                                            Discount %
                                         </th>
                                         <th>
-                                            Product Id
+                                            Discount Ammount
                                         </th>
                                         <th>
-                                            Status
+                                            Limitations
+                                        </th>
+                                        <th>
+                                            Restriction Type
+                                        </th>
+                                        <th>
+                                            Restriction Count
                                         </th>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let orderDetail of orderDetails; index as i" [attr.data-index]="i" 
+                                        <!-- <tr *ngFor="let orderDetail of orderDetails; index as i" [attr.data-index]="i" 
                                         class="ordersRow">
                                             <td>
                                                 {{ orderDetail.$id }}
@@ -55,6 +74,136 @@
                                             <td class="text-primary">
                                                 {{ orderDetail.Status }}                                            
                                             </td>
+                                        </tr> -->
+                                        <tr class="couponsRow">
+                                            <td>
+                                                1
+                                            </td>
+                                            <td>
+                                                C-12345
+                                            </td>
+                                            <td>
+                                                30 Days
+                                            </td>
+                                            <td>
+                                                2%
+                                            </td>
+                                            <td>
+                                                $20
+                                            </td>
+                                            <td>
+                                                First Booking
+                                            </td>
+                                            <td>
+                                                Time
+                                            </td>
+                                            <td>
+                                                1
+                                            </td>
+                                        </tr>
+                                        <tr class="couponsRow">
+                                            <td>
+                                                2
+                                            </td>
+                                            <td>
+                                                C-12346
+                                            </td>
+                                            <td>
+                                                30 Days
+                                            </td>
+                                            <td>
+                                                5%
+                                            </td>
+                                            <td>
+                                                $16
+                                            </td>
+                                            <td>
+                                                Black Friday Sale day
+                                            </td>
+                                            <td>
+                                                Time
+                                            </td>
+                                            <td>
+                                                3
+                                            </td>
+                                        </tr>
+                                        <tr class="couponsRow">
+                                            <td>
+                                                3
+                                            </td>
+                                            <td>
+                                                C-12348
+                                            </td>
+                                            <td>
+                                                2 Days
+                                            </td>
+                                            <td>
+                                                15%
+                                            </td>
+                                            <td>
+                                                $75
+                                            </td>
+                                            <td>
+                                                Christmas Only
+                                            </td>
+                                            <td>
+                                                Time
+                                            </td>
+                                            <td>
+                                                1
+                                            </td>
+                                        </tr>
+                                        <tr class="couponsRow">
+                                            <td>
+                                                4
+                                            </td>
+                                            <td>
+                                                C-12349
+                                            </td>
+                                            <td>
+                                                10 Days
+                                            </td>
+                                            <td>
+                                                10%
+                                            </td>
+                                            <td>
+                                                $50
+                                            </td>
+                                            <td>
+                                                3rd Booking
+                                            </td>
+                                            <td>
+                                                Time
+                                            </td>
+                                            <td>
+                                                1
+                                            </td>
+                                        </tr>
+                                        <tr class="couponsRow">
+                                            <td>
+                                                5
+                                            </td>
+                                            <td>
+                                                C-12350
+                                            </td>
+                                            <td>
+                                                60 Days
+                                            </td>
+                                            <td>
+                                                1%
+                                            </td>
+                                            <td>
+                                                $15
+                                            </td>
+                                            <td>
+                                                Upto Booking of $300
+                                            </td>
+                                            <td>
+                                                Cost
+                                            </td>
+                                            <td>
+                                                10
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -63,7 +212,145 @@
                     </div>
                 </div>
             </div>
+
+            <div class="card card-plain">
+                <div class="card-header card-header-danger row" (click)="openAddCoupons()">
+                    <ul class="col-11 mb-0 pr-0 pl-0">
+                        <h4 class="card-title"> Add New Coupons</h4>
+                    </ul>
+                    <ul class="col-1 mb-0 pr-0 pl-0">
+                        <i class="material-icons add-coupons-icon"> add_circle
+                        </i>
+                    </ul>
+                </div>
+                <div class="row mr-0 ml-0" *ngIf="showCouponsForm">
+                    <mat-card class="example-card">
+                        <mat-card-content class="row ">
+                            <ul class="col-6 example-card-ul">
+                                <form class="example-form" [formGroup]="addCouponsForm" onsubmit="newCouponsSubmit()">
+                                    <table class="example-full-width" cellspacing="0">
+                                        <tr>
+                                            <td>
+                                                <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Coupon Code" name="CouponCode" formControlName="CouponCode"
+                                                        required>
+                                                </mat-form-field>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Validity" name="validity"
+                                                        formControlName="validity" required>
+                                                </mat-form-field>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Discount %" name="discountPerc" formControlName="discountPerc"
+                                                        required>
+                                                </mat-form-field>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Discount Ammount" name="discountAmmt"
+                                                        formControlName="discountAmmt" required>
+                                                </mat-form-field>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Limitations" name="limitation" formControlName="limitation"
+                                                        required>
+                                                </mat-form-field>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Restriction Type" name="res_type" formControlName="res_type"
+                                                        required>
+                                                </mat-form-field>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Restriction Count" formControlName="res_count" name="res_count">
+                                                </mat-form-field>
+                                            </td>
+                                        </tr>
+                                        
+                                    </table>
+                                </form>
+                            </ul>
+                            <ul class="col-6"></ul>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <div class="couponForm-parent row">
+
+                                <button mat-raised-button color="primary" (click)="newCouponsSubmit('top','right')">Submit</button>
+                            </div>
+                        </mat-card-actions>
+                    </mat-card>
+
+
+
+                </div>
+            </div>
+            <div class="card card-plain">
+                <div class="card-header card-header-danger row" (click)="openRemoveCoupons()">
+                    <ul class="col-11 mb-0 pr-0 pl-0">
+                        <h4 class="card-title"> Remove a Coupon</h4>
+                    </ul>
+                    <ul class="col-1 mb-0 pr-0 pl-0">
+                        <i class="material-icons add-coupons-icon"> add_circle
+                        </i>
+                    </ul>
+                </div>
+                <div class="row mr-0 ml-0" *ngIf="showCouponRemovalForm">
+                    <mat-card class="example-card">
+                        <mat-card-content class="row ">
+                            <ul class="col-6 example-card-ul">
+                                <form class="example-form" [formGroup]="removeCouponForm" onsubmit="removeCouponsSubmit()">
+                                    <table class="example-full-width" cellspacing="0">
+                                        <tr>
+                                            <td>
+                                                <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Coupon Code" name="couponCode" formControlName="couponCode"
+                                                        required>
+                                                </mat-form-field>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </ul>
+                            <ul class="col-6"></ul>
+                        </mat-card-content>
+                        <mat-card-actions>
+
+                            <div class="couponForm-parent row" *ngIf="showFindButton">
+                                <button mat-raised-button color="primary" class="couponFindButton" (click)="couponFindToRemove()">
+                                    Find</button>
+                            </div>
+                            <div class="couponRemoveLabel" *ngIf="showFindLabel">
+                                <h4>Do you want to remove <b>""</b> from records ?</h4>
+                            </div>
+                            <div class="couponForm-parent row" *ngIf="showdeleteButton">
+                                <button mat-raised-button color="primary" class="couponRemoveButton" (click)="couponRemoval('top','right')">Remove</button>
+                            </div>
+                        </mat-card-actions>
+                    </mat-card>
+
+
+
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
-  

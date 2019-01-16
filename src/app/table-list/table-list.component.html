@@ -12,67 +12,63 @@
 
                 </ul>
             </div>
-            <div class="row">
-                <div class="col-md-12 table1_view" *ngIf="table1">
+            
+            <div class="row"  *ngIf="table1">
+                         
+                    <div class="col-md-9 "></div>
+                    <form class="navbar-form col-md-3 ">
+                            <div class="input-group no-border">
+                                <input type="text" value="" class="form-control" placeholder="Search...">
+                                <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                    <i class="material-icons">search</i>
+                                    <div class="ripple-container"></div>
+                                </button>
+                            </div>
+                        </form>
+                <div class="col-md-12 table1_view">
                     <div class="card">
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead class=" text-primary">
-                                        <th>
-                                            ID
-                                        </th>
-                                        <th>
-                                            First Name
-                                        </th>
-                                        <th>
-                                            Last Name
-                                        </th>
-                                        <!-- <th>
-                                            City
-                                        </th>
-                                        <th>
-                                            State
-                                        </th> -->
-                                        <th>
-                                            Country
-                                        </th>
-                                        <!-- <th>
-                                            Zip Code
-                                        </th> -->
-                                        <th>
-                                            Email
-                                        </th>
-                                        <th>
-                                            Phone
-                                        </th>
-                                        <!-- <th>
-                                            Age
-                                        </th> -->
-                                        <th>
-                                            Total number Of Orders
-                                        </th>
+                                            <th>
+                                                    ID
+                                                </th>
+                                                <th>
+                                                    First Name
+                                                </th>
+                                                <th>
+                                                    Last Name
+                                                </th>
+                                                
+                                                <th>
+                                                        Email
+                                                </th>
+                                                <th>
+                                                    Nationality
+                                                </th>
+                                                <th>
+                                                    Total number Of Trips
+                                                </th>
                                     </thead>
                                     <tbody>
                                         <tr *ngFor="let user of users ; index as i" [attr.data-index]="i"
                                         (click)="ToProfile(user.$id)" class="tableRow">
-                                            <td>
-                                                {{ user.$id }}
+                                        <td>
+                                                {{ user.Id }}
                                             </td>
                                             <td>
-                                                    {{ user.FirstName }}
+                                                {{ user.FirstName }}
                                             </td>
                                             <td>
-                                                    {{ user.LastName }}
+                                                {{ user.LastName }}
+                                            </td>
+                                           
+                                            <td>
+                                                {{ user.Email }}
                                             </td>
                                             <td>
-                                                    {{ user.BillingAddressCountry }}
-                                            </td>
-                                            <td>
-                                                    {{ user.Email }}
-                                            </td>
-                                            <td>
-                                                    {{ user.Phone }}
+                                                {{ user.Nationality }}
                                             </td>
                                             <td class="text-primary">
                                                 {{ this.totalOrders }}
@@ -89,64 +85,186 @@
         <div class="card card-plain">
                 <div class="card-header card-header-danger row"  (click)="expand_table2()">
                     <ul class="col-11 mb-0">
-                        <h4 class="card-title ">Order Table</h4>
+                        <h4 class="card-title ">Bookings Table</h4>
                     </ul>
                     <ul class="col-1 mb-0">
                         <i class="material-icons dropdown-arrow"  *ngIf="isTrue2">keyboard_arrow_down</i>
                         <i class="material-icons dropdown-arrow"  *ngIf="!isTrue2">keyboard_arrow_up</i>
                     </ul>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 table1_view" *ngIf="table2">
+                <div class="row" *ngIf="table2">
+                        <div class="col-md-9 "></div>
+                        <form class="navbar-form col-md-3 ">
+                                <div class="input-group no-border">
+                                    <input type="text" value="" class="form-control" placeholder="Search...">
+                                    <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                        <i class="material-icons">search</i>
+                                        <div class="ripple-container"></div>
+                                    </button>
+                                </div>
+                            </form>
+                    <div class="col-md-12 table1_view" >
                         <div class="card">
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead class=" text-primary">
-                                            <th>
-                                                ID
-                                            </th>
-                                            <th>
-                                                Order No.
-                                            </th>
-                                            <th>
-                                                User Id
-                                            </th>
-                                            <th>
-                                                Date
-                                            </th>
-                                            <th>
-                                                Product Id
-                                            </th>
-                                            <th>
-                                                Status
-                                            </th>
-                                        </thead>
-                                        <tbody>
-                                            <tr *ngFor="let orderDetail of orderDetails; index as i" [attr.data-index]="i" 
-                                            class="tableRow">
-                                                <td>
-                                                    {{ orderDetail.$id }}
-                                                </td>
-                                                <td>
-                                                  {{ orderDetail.OrderNumber }}                                           
-                                                </td>
-                                                <td>
-                                                    {{ orderDetail.User.$id }}                                            
-                                                </td>
-                                                <td>
-                                                    {{ orderDetail.Date }}                                            
-                                                </td>
-                                                <td>
-                                                    {{ orderDetail.ProductId }}
-                                                </td>
-                                                <td class="text-primary">
-                                                    {{ orderDetail.Status }}                                            
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                    <div class="table-responsive">
+                                            <table class="table">
+                                                <thead class=" text-primary">
+                                                    <th>
+            
+                                                        ID
+                                                    </th>
+                                                    <th>
+                                                        Booking Id
+                                                    </th>
+                                                    <th>
+                                                        Booking Date
+                                                    </th>
+                                                    <th>
+                                                           Destination 
+                                                    </th>
+                                                    <th>
+                                                        User Id
+                                                    </th>
+            
+                                                    <th>
+                                                       Trip Id
+                                                    </th>
+                                                   
+                                                </thead>
+                                                <tbody>
+                                                    <!-- <tr *ngFor="let booking of bookings ; index as i" [attr.data-index]="i" (click)="TobookingDetails(booking.$id ,booking.ASIN)"
+                                                        class="productRow">
+                                                        <td>
+                                                            <a (click)="ToProductDetails(product.$id)">
+                                                                {{ product.$id }}
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            {{ product.ASIN }}
+                                                        </td>
+                                                        <td>
+                                                            {{ product.Name }}
+                                                        </td>
+            
+                                                        <td>
+                                                            {{ product.ItemCode }}
+                                                        </td>
+                                                        <td>
+                                                            {{ product.Contents }}
+                                                        </td>
+                                                        <td class="text-primary">
+                                                            {{ product.MRP }}
+                                                        </td>
+            
+                                                    </tr> -->
+                                                  <tr  class="bookingRow" (click)="ToBookingDetails()">
+                                                    <td>
+                                                        1
+                                                    </td>
+                                                    <td>
+                                                       BID-101
+                                                    </td>
+                                                    <td>
+                                                       25-12-2018
+                                                    </td>
+            
+                                                    <td>
+                                                        Miami Beach
+                                                    </td>
+                                                    <td>
+                                                        UID-1005
+                                                    </td>
+                                                    <td>
+                                                           TID-45862520
+                                                    </td>
+                                                  </tr>
+                                                  <tr  class="bookingRow">
+                                                        <td>
+                                                            2
+                                                        </td>
+                                                        <td>
+                                                           BID-102
+                                                        </td>
+                                                        <td>
+                                                           25-12-2018
+                                                        </td>
+                
+                                                        <td>
+                                                            San Fransisco
+                                                        </td>
+                                                        <td>
+                                                            UID-1095
+                                                        </td>
+                                                        <td>
+                                                               TID-4582520
+                                                        </td>
+                                                      </tr>
+                                                      <tr  class="bookingRow">
+                                                            <td>
+                                                                3
+                                                            </td>
+                                                            <td>
+                                                               BID-105
+                                                            </td>
+                                                            <td>
+                                                               5-11-2018
+                                                            </td>
+                    
+                                                            <td>
+                                                                Las Vegas
+                                                            </td>
+                                                            <td>
+                                                                UID-1001
+                                                            </td>
+                                                            <td>
+                                                                   TID-45862654  
+                                                            </td>
+                                                          </tr>
+                                                          <tr  class="bookingRow">
+                                                                <td>
+                                                                    4
+                                                                </td>
+                                                                <td>
+                                                                   BID-104
+                                                                </td>
+                                                                <td>
+                                                                   26-12-2018
+                                                                </td>
+                        
+                                                                <td>
+                                                                    London
+                                                                </td>
+                                                                <td>
+                                                                    UID-1055
+                                                                </td>
+                                                                <td>
+                                                                       TID-10022520
+                                                                </td>
+                                                              </tr>
+                                                              <tr  class="bookingRow">
+                                                                    <td>
+                                                                        5
+                                                                    </td>
+                                                                    <td>
+                                                                       BID-1010
+                                                                    </td>
+                                                                    <td>
+                                                                       29-12-2018
+                                                                    </td>
+                            
+                                                                    <td>
+                                                                        Paris
+                                                                    </td>
+                                                                    <td>
+                                                                        UID-1015
+                                                                    </td>
+                                                                    <td>
+                                                                           TID-985020
+                                                                    </td>
+                                                                  </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                             </div>
                         </div>
                     </div>
@@ -155,69 +273,155 @@
         <div class="card card-plain">
                 <div class="card-header card-header-danger row" (click)='expand_table3()'>
                     <ul class="col-11 mb-0">
-                        <h4 class="card-title ">Transaction Table</h4>
+                        <h4 class="card-title ">Trips Table</h4>
                     </ul>
                     <ul class="col-1 mb-0">
                             <i class="material-icons dropdown-arrow"  *ngIf="isTrue3">keyboard_arrow_down</i>
                             <i class="material-icons dropdown-arrow"  *ngIf="!isTrue3">keyboard_arrow_up</i>                    </ul>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 table1_view" *ngIf="table3">
+                <div class="row" *ngIf="table3">
+                        <div class="col-md-9 "></div>
+                        <form class="navbar-form col-md-3 ">
+                                <div class="input-group no-border">
+                                    <input type="text" value="" class="form-control" placeholder="Search...">
+                                    <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                        <i class="material-icons">search</i>
+                                        <div class="ripple-container"></div>
+                                    </button>
+                                </div>
+                            </form>
+                    <div class="col-md-12 table1_view" >
                         <div class="card">
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead class=" text-primary">
-                                            <th>
-                                                ID
-                                            </th>
-                                            <th>
-                                                Code
-                                            </th>
-                                            <th>
-                                                Account Number
-                                            </th>
-                                            <th>
-                                                Program Code
-                                            </th>
-                                            <th>
-                                                Merchant Code
-                                            </th>
-                                            <th>
-                                                Shop Code
-                                            </th>
-                                            <th>
-                                                Ammount
-                                            </th>
-                                            <th>
-                                               Terminal SSW
-                                            </th>
-                                            <th>
-                                                Channel
-                                            </th>
-                                            <th>
-                                                Order Id
-                                            </th>
-                                        </thead>
-                                        <tbody>
-                                            <tr *ngFor="let transactionDetail of transactionDetails; index as i" 
-                                            [attr.data-index]="i" class="tableRow">
-                                                <td>
-                                                </td>
-                                                <td>
-                                                </td>
-                                                <td>
-                                                </td>
-                                                <td>
-                                                </td>
-                                                <td>
-                                                </td>
-                                                <td class="text-primary">
-                                                </td>
+                                    <div class="table-responsive">
+                                            <table class="table">
+                                                <thead class=" text-primary">
+                                                    <th>
+                                                        ID
+                                                    </th>
+                                                    <th>
+                                                       User Id
+                                                    </th>
+                                                    <th>
+                                                       Booking Id
+                                                    </th>
+                                                    <th>
+                                                       Destination
+                                                    </th>
+                                                    <th>
+                                                        Booking Date
+                                                    </th>
+                                                   
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="tripsRow" (click)="toDetails()">
+                                                              <td>
+                                                                  TID-101
+                                                              </td>
+                                                              <td>
+                                                                 UID-12
+                                                              </td>
+                                                              <td>
+                                                                 BID-125468
+                                                              </td>
+                                                              <td>
+                                                                 Miami Beach
+                                                              </td>
+                                                              <td>
+                                                                  12-12-2018
+                                                              </td>
+                                                
+                                                    </tr>
+                                                    <tr class="tripsRow">
+                                                          <td>
+                                                              TID-102
+                                                          </td>
+                                                          <td>
+                                                             UID-13
+                                                          </td>
+                                                          <td>
+                                                             BID-125457
+                                                          </td>
+                                                          <td>
+                                                             San Fransisco
+                                                          </td>
+                                                          <td>
+                                                              13-12-2018
+                                                          </td>
+                                            
+                                                </tr>
+                                                <tr class="tripsRow">
+                                                      <td>
+                                                          TID-103
+                                                      </td>
+                                                      <td>
+                                                         UID-45
+                                                      </td>
+                                                      <td>
+                                                         BID-125888
+                                                      </td>
+                                                      <td>
+                                                       Chicago
+                                                      </td>
+                                                      <td>
+                                                          14-12-2018
+                                                      </td>
+                                        
                                             </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                            <tr class="tripsRow">
+                                                  <td>
+                                                      TID-104
+                                                  </td>
+                                                  <td>
+                                                     UID-15
+                                                  </td>
+                                                  <td>
+                                                     BID-125511
+                                                  </td>
+                                                  <td>
+                                                     Mexico City
+                                                  </td>
+                                                  <td>
+                                                      14-12-2018
+                                                  </td>
+                                    
+                                        </tr>
+                                        <tr class="tripsRow">
+                                              <td>
+                                                  TID-105
+                                              </td>
+                                              <td>
+                                                 UID-46
+                                              </td>
+                                              <td>
+                                                 BID-125985
+                                              </td>
+                                              <td>
+                                                 Tokyo
+                                              </td>
+                                              <td>
+                                                  12-12-2018
+                                              </td>
+                                
+                                    </tr>
+                                                    <!-- <tr *ngFor="let transactionDetail of transactionDetails; index as i" 
+                                                    [attr.data-index]="i" class="transactionsRow">
+                                                        <td>
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                        <td class="text-primary">
+                                                        </td> -->
+                                                    <!-- </tr> -->
+                                                </tbody>
+                                            </table>
+                                        </div>
                             </div>
                         </div>
                     </div>
@@ -226,7 +430,7 @@
         <div class="card card-plain">
                 <div class="card-header card-header-danger row" (click)='expand_table4()'>
                     <ul class="col-11 mb-0">
-                        <h4 class="card-title ">Products Table</h4>
+                        <h4 class="card-title ">Coupons Table</h4>
                     </ul>
                     <ul class="col-1 mb-0">
                         <i class="material-icons dropdown-arrow"  *ngIf="isTrue4">keyboard_arrow_down</i>
@@ -234,71 +438,607 @@
                     </ul>
                 </div>
                 <div class="row" *ngIf="table4">
+                        <div class="col-md-9 "></div>
+                        <form class="navbar-form col-md-3 ">
+                                <div class="input-group no-border">
+                                    <input type="text" value="" class="form-control" placeholder="Search...">
+                                    <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                        <i class="material-icons">search</i>
+                                        <div class="ripple-container"></div>
+                                    </button>
+                                </div>
+                            </form>
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table class="table">
-                                            <thead class=" text-primary">
-                                              <th>
-          
-                                                  ID
-                                              </th>
-                                              <th>
-                                                  ASIN
-                                              </th>
-                                              <th>
-                                                  Name
-                                              </th>
-                                              <th>
-                                                  Item Code
-                                              </th>
-                                              
-                                              <th>
-                                                Content
-                                            </th>
-                                            <!-- <th>
-                                                No of images
-                                            </th> -->
-                                            <th>
-                                              MRP
-                                          </th>
-                                            </thead>
-          
-          
-                                            <tbody>
-                                                <tr *ngFor="let product of products ; index as i" [attr.data-index]="i" (click)="ToProductDetails(product.$id ,product.ASIN)"
-                                                class="tableRow">
-                                                    <td>
-                                                      <a (click)="ToProductDetails(product.$id)">
-                                                              {{ product.$id }}
-                                                      </a>
-                                                    </td>
-                                                    <td>
-                                                      {{ product.ASIN }}
-                                                    </td>  
-                                                    <td>
-                                                          {{  product.Name }}
-                                                    </td>
-                                                  
-                                                    <td>
-                                                       {{ product.ItemCode }}
-                                                    </td>
-                                                    <td>
-                                                        {{ product.Contents }}
-                                                   </td>
-                                                   <!-- <td>
-                                                      10
-                                                   </td> -->
-                                                    <td class="text-primary">
-                                                      {{ product.MRP }}
-                                                    </td>
+                                        <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead class=" text-primary">
+                                                        <th>
+                                                            ID
+                                                        </th>
+                                                        <th>
+                                                            Coupon Code
+                                                        </th>
+                                                        <th>
+                                                            Validity
+                                                        </th>
+                                                        <th>
+                                                            Discount %
+                                                        </th>
+                                                        <th>
+                                                            Discount Ammount
+                                                        </th>
+                                                        <th>
+                                                            Limitations
+                                                        </th>
+                                                        <th>
+                                                            Restriction Type
+                                                        </th>
+                                                        <th>
+                                                            Restriction Count
+                                                        </th>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- <tr *ngFor="let orderDetail of orderDetails; index as i" [attr.data-index]="i" 
+                                                        class="ordersRow">
+                                                            <td>
+                                                                {{ orderDetail.$id }}
+                                                            </td>
+                                                            <td>
+                                                              {{ orderDetail.OrderNumber }}                                           
+                                                            </td>
+                                                            <td>
+                                                                {{ orderDetail.User.$id }}                                            
+                                                            </td>
+                                                            <td>
+                                                                {{ orderDetail.Date }}                                            
+                                                            </td>
+                                                            <td>
+                                                                {{ orderDetail.ProductId }}
+                                                            </td>
+                                                            <td class="text-primary">
+                                                                {{ orderDetail.Status }}                                            
+                                                            </td>
+                                                        </tr> -->
+                                                        <tr class="couponsRow">
+                                                            <td>
+                                                                1
+                                                            </td>
+                                                            <td>
+                                                                C-12345
+                                                            </td>
+                                                            <td>
+                                                                30 Days
+                                                            </td>
+                                                            <td>
+                                                                2%
+                                                            </td>
+                                                            <td>
+                                                                $20
+                                                            </td>
+                                                            <td>
+                                                                First Booking
+                                                            </td>
+                                                            <td>
+                                                                Time
+                                                            </td>
+                                                            <td>
+                                                                1
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="couponsRow">
+                                                            <td>
+                                                                2
+                                                            </td>
+                                                            <td>
+                                                                C-12346
+                                                            </td>
+                                                            <td>
+                                                                30 Days
+                                                            </td>
+                                                            <td>
+                                                                5%
+                                                            </td>
+                                                            <td>
+                                                                $16
+                                                            </td>
+                                                            <td>
+                                                                Black Friday Sale day
+                                                            </td>
+                                                            <td>
+                                                                Time
+                                                            </td>
+                                                            <td>
+                                                                3
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="couponsRow">
+                                                            <td>
+                                                                3
+                                                            </td>
+                                                            <td>
+                                                                C-12348
+                                                            </td>
+                                                            <td>
+                                                                2 Days
+                                                            </td>
+                                                            <td>
+                                                                15%
+                                                            </td>
+                                                            <td>
+                                                                $75
+                                                            </td>
+                                                            <td>
+                                                                Christmas Only
+                                                            </td>
+                                                            <td>
+                                                                Time
+                                                            </td>
+                                                            <td>
+                                                                1
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="couponsRow">
+                                                            <td>
+                                                                4
+                                                            </td>
+                                                            <td>
+                                                                C-12349
+                                                            </td>
+                                                            <td>
+                                                                10 Days
+                                                            </td>
+                                                            <td>
+                                                                10%
+                                                            </td>
+                                                            <td>
+                                                                $50
+                                                            </td>
+                                                            <td>
+                                                                3rd Booking
+                                                            </td>
+                                                            <td>
+                                                                Time
+                                                            </td>
+                                                            <td>
+                                                                1
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="couponsRow">
+                                                            <td>
+                                                                5
+                                                            </td>
+                                                            <td>
+                                                                C-12350
+                                                            </td>
+                                                            <td>
+                                                                60 Days
+                                                            </td>
+                                                            <td>
+                                                                1%
+                                                            </td>
+                                                            <td>
+                                                                $15
+                                                            </td>
+                                                            <td>
+                                                                Upto Booking of $300
+                                                            </td>
+                                                            <td>
+                                                                Cost
+                                                            </td>
+                                                            <td>
+                                                                10
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+        </div>
+        <div class="card card-plain">
+                <div class="card-header card-header-danger row" (click)='expand_table5()'>
+                    <ul class="col-11 mb-0">
+                        <h4 class="card-title ">Margin Table</h4>
+                    </ul>
+                    <ul class="col-1 mb-0">
+                        <i class="material-icons dropdown-arrow"  *ngIf="isTrue4">keyboard_arrow_down</i>
+                        <i class="material-icons dropdown-arrow"  *ngIf="!isTrue4">keyboard_arrow_up</i>
+                    </ul>
+                </div>
+                <div class="row" *ngIf="  table5 ">
+                        <div class="col-md-9 "></div>
+                        <form class="navbar-form col-md-3 ">
+                                <div class="input-group no-border">
+                                    <input type="text" value="" class="form-control" placeholder="Search...">
+                                    <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                        <i class="material-icons">search</i>
+                                        <div class="ripple-container"></div>
+                                    </button>
+                                </div>
+                            </form>
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                        <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead class=" text-primary">
+                                                        <th>
+                                                            ID
+                                                        </th>
+                                                        <th>
+                                                           Type
+                                                        </th>
+                                                        <th>
+                                                           Percentage
+                                                        </th>
+                                                        <th>
+                                                           Days in Advance
+                                                        </th>
+                                                        <th>
+                                                            Margin on the rate
+                                                        </th>
+                                                        <th>
+                                                            Tax
+                                                         </th>
+                                                         <th>
+                                                             Credit Card Fee
+                                                         </th>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="marginRow" >
+                                                                  <td>
+                                                                     1
+                                                                  </td>
+                                                                  <td>
+                                                                     Percentage
+                                                                  </td>
+                                                                  <td>
+                                                                     2%
+                                                                  </td>
+                                                                  <td>
+                                                                     30 Days
+                                                                  </td>
+                                                                  <td>
+                                                                     20%
+                                                                  </td>
+                                                                  <td>
+                                                                      $3.00
+                                                                  </td>
+                                                                  <td>
+                                                                      $2.00
+                                                                   </td>
+                                                                  
                                                     
+                                                        </tr>
+                                                        <tr class="marginRow">
+                                                              <td>
+                                                                2
+                                                              </td>
+                                                               <td>
+                                                                  Flat
+                                                               </td>
+                                                               <td>
+                                                                  1%
+                                                               </td>
+                                                               <td>
+                                                                  50 Days
+                                                               </td>
+                                                               <td>
+                                                                  20%
+                                                               </td>
+                                                               <td>
+                                                                   $3.00
+                                                               </td>
+                                                               <td>
+                                                                   $2.00
+                                                                </td>
+                                                    </tr>
+                                                    <tr class="marginRow">
+                                                          <td>
+                                                              3
+                                                          </td>
+                                                        
+                                                           <td>
+                                                              Percentage
+                                                           </td>
+                                                           <td>
+                                                              3%
+                                                           </td>
+                                                           <td>
+                                                              20 Days
+                                                           </td>
+                                                           <td>
+                                                              20%
+                                                           </td>
+                                                           <td>
+                                                               $3.00
+                                                           </td>
+                                                           <td>
+                                                               $2.00
+                                                            </td>
+                                            
                                                 </tr>
-                                                
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                                <tr class="marginRow">
+                                                      <td>
+                                                         4
+                                                      </td>
+                                                       <td>
+                                                          Percentage
+                                                       </td>
+                                                       <td>
+                                                          10%
+                                                       </td>
+                                                       <td>
+                                                          10 Days
+                                                       </td>
+                                                       <td>
+                                                          40%
+                                                       </td>
+                                                       <td>
+                                                           $3.00
+                                                       </td>
+                                                       <td>
+                                                           $2.00
+                                                        </td>
+                                            </tr>
+                                            <tr class="marginRow">
+                                                  <td>
+                                                      5
+                                                  </td>
+                                                   <td>
+                                                      Percentage
+                                                   </td>
+                                                   <td>
+                                                      50%
+                                                   </td>
+                                                   <td>
+                                                      5 Days
+                                                   </td>
+                                                   <td>
+                                                      30%
+                                                   </td>
+                                                   <td>
+                                                       $3.00
+                                                   </td>
+                                                   <td>
+                                                       $2.00
+                                                    </td>
+                                    
+                                        </tr>
+                                                        <!-- <tr *ngFor="let transactionDetail of transactionDetails; index as i" 
+                                                        [attr.data-index]="i" class="transactionsRow">
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td class="text-primary">
+                                                            </td> -->
+                                                        <!-- </tr> -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+        </div>
+        <div class="card card-plain">
+                <div class="card-header card-header-danger row" (click)='expand_table6()'>
+                    <ul class="col-11 mb-0">
+                        <h4 class="card-title ">Travellers Table</h4>
+                    </ul>
+                    <ul class="col-1 mb-0">
+                        <i class="material-icons dropdown-arrow"  *ngIf="isTrue4">keyboard_arrow_down</i>
+                        <i class="material-icons dropdown-arrow"  *ngIf="!isTrue4">keyboard_arrow_up</i>
+                    </ul>
+                </div>
+                <div class="row" *ngIf="table6">
+                        <div class="col-md-9 "></div>
+                        <form class="navbar-form col-md-3 ">
+                                <div class="input-group no-border">
+                                    <input type="text" value="" class="form-control" placeholder="Search...">
+                                    <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                        <i class="material-icons">search</i>
+                                        <div class="ripple-container"></div>
+                                    </button>
+                                </div>
+                            </form>
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                        <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead class=" text-primary">
+                                                        <th>
+                                                            ID
+                                                        </th>
+                                                        <th>
+                                                           User Id
+                                                        </th>
+                                                        <th>
+                                                           First Name
+                                                        </th>
+                                                        <th>
+                                                            Last Name
+                                                        </th>
+                                                        <th>
+                                                            Email
+                                                        </th>
+                                                        <th>
+                                                            Phone
+                                                         </th>
+                                                         <th>
+                                                            Age
+                                                         </th>
+                                                         <th>
+                                                             Nationality
+                                                         </th>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="travellersRow" >
+                                                                  <td>
+                                                                     1
+                                                                  </td>
+                                                                  <td>
+                                                                     UID-55
+                                                                  </td>
+                                                                  <td>
+                                                                     David
+                                                                  </td>
+                                                                  <td>
+                                                                     Johnson
+                                                                  </td>
+                                                                  <td>
+                                                                     davjohnson@xyz.com
+                                                                  </td>
+                                                                  <td>
+                                                                     1234567890
+                                                                  </td>
+                                                                  <td>
+                                                                     25
+                                                                     </td>
+                                                                  <td>
+                                                                    UK
+                                                                   </td>
+                                                                  
+                                                    
+                                                        </tr>
+                                                        <tr class="travellersRow">
+                                                              <td>
+                                                                2
+                                                              </td>
+                                                               <td>
+                                                                  UID-56
+                                                               </td>
+                                                               <td>
+                                                                  Eric
+                                                               </td>
+                                                               <td>
+                                                                  Johnes
+                                                               </td>
+                                                               <td>
+                                                                  johnes.eric@xyz.com
+                                                               </td>
+                                                               <td>
+                                                                  8954567890
+                                                               </td>
+                                                               <td>
+                                                                  55
+                                                                 </td>
+                                                               <td>
+                                                                 USA
+                                                                </td>
+                                                    </tr>
+                                                    <tr class="travellersRow">
+                                                          <td>
+                                                              3
+                                                          </td>
+                                                        
+                                                          <td>
+                                                              UID-57
+                                                           </td>
+                                                           <td>
+                                                              Bill
+                                                           </td>
+                                                           <td>
+                                                              Skarsgard
+                                                           </td>
+                                                           <td>
+                                                              skarsgard.bill@xyz.com
+                                                           </td>
+                                                           <td>
+                                                              4054567890
+                                                           </td>
+                                                           <td>
+                                                              40
+                                                             </td>
+                                                           <td>
+                                                             Sweden
+                                                            </td>
+                                            
+                                                </tr>
+                                                <tr class="travellersRow">
+                                                      <td>
+                                                         4
+                                                      </td>
+                                                      <td>
+                                                          UID-58
+                                                       </td>
+                                                       <td>
+                                                          Ram
+                                                       </td>
+                                                       <td>
+                                                          Sampat
+                                                       </td>
+                                                       <td>
+                                                          ramsampat@xyz.com
+                                                       </td>
+                                                       <td>
+                                                          1685567890
+                                                       </td>
+                                                       <td>
+                                                          60
+                                                         </td>
+                                                       <td>
+                                                         Canada
+                                                        </td>
+                                                       
+                                            </tr>
+                                            <tr class="travellersRow">
+                                                  <td>
+                                                      5
+                                                  </td>
+                                                  <td>
+                                                      UID-58
+                                                   </td>
+                                                   <td>
+                                                      Elizeh
+                                                   </td>
+                                                   <td>
+                                                      Sheikh
+                                                   </td>
+                                                   <td>
+                                                      elisheikh@xyz.com
+                                                   </td>
+                                                   <td>
+                                                      4586567890
+                                                   </td>
+                                                   <td>
+                                                      45
+                                                     </td>
+                                                   <td>
+                                                     Turkey
+                                                    </td>
+                                    
+                                        </tr>
+                                                        <!-- <tr *ngFor="let transactionDetail of transactionDetails; index as i" 
+                                                        [attr.data-index]="i" class="transactionsRow">
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td class="text-primary">
+                                                            </td> -->
+                                                        <!-- </tr> -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                 </div>
                             </div>
                         </div>
@@ -308,436 +1048,3 @@
 </div>
 
 
-<!-- <div class="main-content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card card -plain">
-                    <div class="card-header card-header card-header-danger row">
-                        <ul class="col-11">
-                            <h4 class="card-title ">Simple Table</h4>
-                        </ul>
-                        <ul class="col-1">
-                            <i class="material-icons">arrow_drop_down_circle</i>
-                        </ul>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead class=" text-primary">
-                                    <th>
-                                        ID
-                                    </th>
-                                    <th>
-                                        Name
-                                    </th>
-                                    <th>
-                                        Country
-                                    </th>
-                                    <th>
-                                        City
-                                    </th>
-                                    <th>
-                                        Salary
-                                    </th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            1
-                                        </td>
-                                        <td>
-                                            Dakota Rice
-                                        </td>
-                                        <td>
-                                            Niger
-                                        </td>
-                                        <td>
-                                            Oud-Turnhout
-                                        </td>
-                                        <td class="text-primary">
-                                            $36,738
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            2
-                                        </td>
-                                        <td>
-                                            Minerva Hooper
-                                        </td>
-                                        <td>
-                                            Curaçao
-                                        </td>
-                                        <td>
-                                            Sinaai-Waas
-                                        </td>
-                                        <td class="text-primary">
-                                            $23,789
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            3
-                                        </td>
-                                        <td>
-                                            Sage Rodriguez
-                                        </td>
-                                        <td>
-                                            Netherlands
-                                        </td>
-                                        <td>
-                                            Baileux
-                                        </td>
-                                        <td class="text-primary">
-                                            $56,142
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            4
-                                        </td>
-                                        <td>
-                                            Philip Chaney
-                                        </td>
-                                        <td>
-                                            Korea, South
-                                        </td>
-                                        <td>
-                                            Overland Park
-                                        </td>
-                                        <td class="text-primary">
-                                            $38,735
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            5
-                                        </td>
-                                        <td>
-                                            Doris Greene
-                                        </td>
-                                        <td>
-                                            Malawi
-                                        </td>
-                                        <td>
-                                            Feldkirchen in Kärnten
-                                        </td>
-                                        <td class="text-primary">
-                                            $63,542
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            6
-                                        </td>
-                                        <td>
-                                            Mason Porter
-                                        </td>
-                                        <td>
-                                            Chile
-                                        </td>
-                                        <td>
-                                            Gloucester
-                                        </td>
-                                        <td class="text-primary">
-                                            $78,615
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="card card-plain">
-                    <div class="card-header card-header-danger">
-                        <h4 class="card-title mt-0"> Table on Plain Background</h4>
-                        <p class="card-category"> Here is a subtitle for this table</p>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead class="">
-                                    <th>
-                                        ID
-                                    </th>
-                                    <th>
-                                        Name
-                                    </th>
-                                    <th>
-                                        Country
-                                    </th>
-                                    <th>
-                                        City
-                                    </th>
-                                    <th>
-                                        Salary
-                                    </th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            1
-                                        </td>
-                                        <td>
-                                            Dakota Rice
-                                        </td>
-                                        <td>
-                                            Niger
-                                        </td>
-                                        <td>
-                                            Oud-Turnhout
-                                        </td>
-                                        <td>
-                                            $36,738
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            2
-                                        </td>
-                                        <td>
-                                            Minerva Hooper
-                                        </td>
-                                        <td>
-                                            Curaçao
-                                        </td>
-                                        <td>
-                                            Sinaai-Waas
-                                        </td>
-                                        <td>
-                                            $23,789
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            3
-                                        </td>
-                                        <td>
-                                            Sage Rodriguez
-                                        </td>
-                                        <td>
-                                            Netherlands
-                                        </td>
-                                        <td>
-                                            Baileux
-                                        </td>
-                                        <td>
-                                            $56,142
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            4
-                                        </td>
-                                        <td>
-                                            Philip Chaney
-                                        </td>
-                                        <td>
-                                            Korea, South
-                                        </td>
-                                        <td>
-                                            Overland Park
-                                        </td>
-                                        <td>
-                                            $38,735
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            5
-                                        </td>
-                                        <td>
-                                            Doris Greene
-                                        </td>
-                                        <td>
-                                            Malawi
-                                        </td>
-                                        <td>
-                                            Feldkirchen in Kärnten
-                                        </td>
-                                        <td>
-                                            $63,542
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            6
-                                        </td>
-                                        <td>
-                                            Mason Porter
-                                        </td>
-                                        <td>
-                                            Chile
-                                        </td>
-                                        <td>
-                                            Gloucester
-                                        </td>
-                                        <td>
-                                            $78,615
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header card-header-danger">
-                        <h4 class="card-title ">Total Transaction Details</h4>
-                        <p class="card-category">Here all the Voucher transaction details are added</p>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead class=" text-primary">
-                                    <th>
-                                        ID
-                                    </th>
-                                    <th>
-                                        Code
-                                    </th>
-                                    <th>
-                                        Account Number
-                                    </th>
-                                    <th>
-                                        Program Code
-                                    </th>
-                                    <th>
-                                        Merchant Code
-                                    </th>
-                                    <th>
-                                        Shop Code
-                                    </th>
-                                    <th>
-                                        Ammount
-                                    </th>
-                                    <th>
-                                        Terminal SSW
-                                    </th>
-                                    <th>
-                                        Channel
-                                    </th>
-                                    <th>
-                                        Order Id
-                                    </th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            1
-                                        </td>
-                                        <td>
-                                            45454
-                                        </td>
-                                        <td>
-                                            U12345
-                                        </td>
-                                        <td>
-                                            21-12-2018
-                                        </td>
-                                        <td>
-                                            GGNG48456849846
-                                        </td>
-                                        <td class="text-primary">
-                                            Success
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            2
-                                        </td>
-                                        <td>
-                                            Minerva Hooper
-                                        </td>
-                                        <td>
-                                            Curaçao
-                                        </td>
-                                        <td>
-                                            Sinaai-Waas
-                                        </td>
-                                        <td class="text-primary">
-                                            $23,789
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            3
-                                        </td>
-                                        <td>
-                                            Sage Rodriguez
-                                        </td>
-                                        <td>
-                                            Netherlands
-                                        </td>
-                                        <td>
-                                            Baileux
-                                        </td>
-                                        <td class="text-primary">
-                                            $56,142
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            4
-                                        </td>
-                                        <td>
-                                            Philip Chaney
-                                        </td>
-                                        <td>
-                                            Korea, South
-                                        </td>
-                                        <td>
-                                            Overland Park
-                                        </td>
-                                        <td class="text-primary">
-                                            $38,735
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            5
-                                        </td>
-                                        <td>
-                                            Doris Greene
-                                        </td>
-                                        <td>
-                                            Malawi
-                                        </td>
-                                        <td>
-                                            Feldkirchen in Kärnten
-                                        </td>
-                                        <td class="text-primary">
-                                            $63,542
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            6
-                                        </td>
-                                        <td>
-                                            Mason Porter
-                                        </td>
-                                        <td>
-                                            Chile
-                                        </td>
-                                        <td>
-                                            Gloucester
-                                        </td>
-                                        <td class="text-primary">
-                                            $78,615
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->

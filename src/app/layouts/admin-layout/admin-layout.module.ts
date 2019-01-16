@@ -17,6 +17,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { LoginComponent } from '../../login/login.component';
 import { MarginComponent } from '../../margin/margin.component';
 import { TravellersComponent } from '../../travellers/travellers.component';
+import { TripsDetailsComponent } from '../../trips/trips-details/trips-details.component';
+import { BookingDetailsComponent } from '../../bookings/booking-details/booking-details.component';
 
 import {
   MatButtonModule,
@@ -54,6 +56,8 @@ import {
     LoginComponent,
     MarginComponent,
     TravellersComponent,
+    TripsDetailsComponent,
+    BookingDetailsComponent,
   ]
 })
 
