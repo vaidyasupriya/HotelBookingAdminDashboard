@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   login() {
-    // this.router.navigate(['/dashboard']);
-    this.router.navigate(['/layoutModule']);
+    this.router.navigate(['/adminLayout/dashboard']);
+
   }
 }

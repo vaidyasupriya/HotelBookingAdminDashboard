@@ -34,7 +34,7 @@ export class UserProfileComponent implements OnInit {
 
 
   toProfile( user_id: any ) {
-    this.router.navigate(['/user-profile-detail']);
+    this.router.navigate(['/adminLayout/user-profile-detail']);
     this.dynamicapiservice.setSelectedUser(user_id);
   }
 }

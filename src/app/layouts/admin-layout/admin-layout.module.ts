@@ -9,7 +9,6 @@ import { TableListComponent } from '../../table-list/table-list.component';
 import { BookingsComponent } from '../../bookings/bookings.component';
 import { TripsComponent } from '../../trips/trips.component';
 import { UserProfileDetailedComponent } from '../../user-profile-detailed/user-profile-detailed.component';
-import { ProductDetailsComponent } from '../../product-details/product-details.component';
 import { CouponsComponent } from '../../coupons/coupons.component';
 import { DashboardProfilePageComponent } from '../../dashboard-profile-page/dashboard-profile-page.component';
 import {MatCardModule} from '@angular/material/card';
@@ -50,10 +49,8 @@ import {
     BookingsComponent,
     TripsComponent,
     UserProfileDetailedComponent,
-    ProductDetailsComponent,
     CouponsComponent,
     DashboardProfilePageComponent,
-    LoginComponent,
     MarginComponent,
     TravellersComponent,
     TripsDetailsComponent,

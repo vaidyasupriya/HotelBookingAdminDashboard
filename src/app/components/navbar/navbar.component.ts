@@ -125,6 +125,6 @@ export class NavbarComponent implements OnInit {
     }
 
     toDashboardProfile() {
-        this.router.navigate(['/profile']);
+        this.router.navigate(['/adminLayout/profile']);
     }
 }

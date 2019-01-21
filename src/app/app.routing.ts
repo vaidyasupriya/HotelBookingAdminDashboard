@@ -7,6 +7,12 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 const routes: Routes = [
+  {path: '',  component: LoginComponent, pathMatch: 'full', },
+  // try 1
+    {path: 'adminLayout', component: AdminLayoutComponent, children: [
+      { path: '',
+      loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule' },
+      ]},
   // {path: '',  component: LoginComponent, pathMatch: 'full', },
 // try 1
   // {path: 'dashboard', component: DashboardComponent, children: [
@@ -31,10 +37,10 @@ const routes: Routes = [
 
 
 
-  {path: '', redirectTo: 'login', pathMatch: 'full', },
-  { path: '', component: AdminLayoutComponent, children: [  { path: '',
-   loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
-  }]},
+  // {path: '', redirectTo: 'login', pathMatch: 'full', },
+  // { path: '', component: AdminLayoutComponent, children: [  { path: '',
+  //  loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
+  // }]},
     // { path: 'dashboard',      component: DashboardComponent },
     // { path: 'table-list',     component: TableListComponent },
     // { path: 'typography',     component: TypographyComponent },

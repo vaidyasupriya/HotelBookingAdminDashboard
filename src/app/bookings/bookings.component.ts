@@ -87,7 +87,7 @@ export class BookingsComponent implements OnInit {
     /// for pushing the code to db
   }
   ToBookingDetails($id: any, ASIN: any) {
-    this.router.navigate(['/booking-details']);
+    this.router.navigate(['/adminLayout/booking-details']);
     // this.dynamicapiservice.setSelectedProduct($id, ASIN);
   }
   openAddbooking() {

@@ -15,7 +15,6 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { TableListComponent } from './table-list/table-list.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { TripsComponent } from './trips/trips.component';
-import { MapsComponent } from './maps/maps.component';
 import { AgmCoreModule } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { UserProfileDetailedComponent } from './user-profile-detailed/user-profile-detailed.component';
@@ -32,7 +31,6 @@ import { MatDialogModule, MatTableModule,
   MatToolbarModule, MatMenuModule, MatIconModule, MatProgressSpinnerModule
 } from '@angular/material';
 import { LoginComponent } from './login/login.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatExpansionModule } from '@angular/material/expansion';
 import { CouponsComponent } from './coupons/coupons.component';
@@ -74,6 +72,7 @@ import { BookingDetailsComponent } from './bookings/booking-details/booking-deta
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    LoginComponent,
 
   ],
   providers: [],

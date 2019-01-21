@@ -18,7 +18,7 @@ export class TripsComponent implements OnInit {
     // });
   }
   toDetails( ) {
-    this.router.navigate(['/tripsDetails']);
+    this.router.navigate(['/adminLayout/tripsDetails']);
     // this.dynamicapiservice.setSelectedUser();
   }
 }
