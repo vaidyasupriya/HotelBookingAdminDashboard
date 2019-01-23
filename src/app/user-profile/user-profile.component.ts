@@ -12,18 +12,22 @@ declare var $: any;
 })
 export class UserProfileComponent implements OnInit {
   values: any;
-
-
-
   users: any;
-
+  // progress bar
+  color = 'primary';
+  mode = 'indeterminate';
+  value = 50;
+  bufferValue = 100;
+  loading = true;
+   // progress bar
   constructor( private router: Router, private http: HttpClient, private dynamicapiservice: dynamicApiService) {
    }
-
   ngOnInit() {
+    this.loading = true;
           this.http.get('https://doyenowebapp2.azurewebsites.net/api/users').
           subscribe(data => {
             this.users = data;
+            this.loading = false;
             for ( const user of this.users ) {
               console.log(user);
             }
@@ -31,8 +35,6 @@ export class UserProfileComponent implements OnInit {
             console.log(error);
           });
   }
-
-
   toProfile( user_id: any ) {
     this.router.navigate(['/adminLayout/user-profile-detail']);
     this.dynamicapiservice.setSelectedUser(user_id);

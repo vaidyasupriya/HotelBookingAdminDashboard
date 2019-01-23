@@ -6,96 +6,104 @@
                     <div class="card-header card-header-danger">
                         <h4 class="card-title">Profile</h4>
                         <p class="card-category">Information</p>
+                       
                     </div>
+                    <mat-progress-bar class="example-margin" [color]="color" [mode]="mode" [value]="value"
+                    [bufferValue]="bufferValue" *ngIf="loading" class="progress-bar-style" >
+                </mat-progress-bar>
                     <div class="card-body">
+                        <div *ngIf="!loading">
                             <div class="row row-style">
-                             <div class="col-md-2">
-                                            <label >ID</label>
-                             </div>
-                             <div class="col-md-4">
-                                            <label >{{ userId }} </label>
-                             </div>
-                             <div class="col-md-2">
-                                            <label >DOB</label>
-                             </div>
-                             <div class="col-md-4">
-                                            <label > {{ user_DateOfBirth }}</label>
-                             </div>
-                            </div>
-                            <div class="row row-style" >
-                               <div class="col-md-2">
-                                    <label >First Name</label>
+                                <div class="col-md-2">
+                                    <label>ID</label>
                                 </div>
                                 <div class="col-md-4">
-                                        <label > {{ user_FirstName }}</label>
-                                    </div>
+                                    <label>{{ userId }} </label>
+                                </div>
                                 <div class="col-md-2">
-                                        <label >Last Name</label>
+                                    <label>DOB</label>
                                 </div>
                                 <div class="col-md-4">
-                                        <label > {{ user_LastName }}</label>
-                                    </div>
+                                    <label> {{ user_DateOfBirth }}</label>
+                                </div>
                             </div>
                             <div class="row row-style">
                                 <div class="col-md-2">
-                                            <label >Address</label>
+                                    <label>First Name</label>
                                 </div>
-                                <div class="col-md-10">
-                                        <label > {{ user_Address }}</label>
-                                    </div>
-                            </div>
-                            <div class="row row-style">
-                                    <div class="col-md-2">
-                                                    <label >Nationality</label>
-                                    </div>
-                                    <div class="col-md-10">
-                                            <label > {{ user_Nationality }}</label>
-                                        </div>
-                            </div>
-                            <div class="row row-style">
-                                    <div class="col-md-2">
-                                                    <label >Email :</label>
-                                    </div>
-                                    <div class="col-md-10">
-                                                    <label > {{ user_Email }} </label>
-                                    </div>
+                                <div class="col-md-4">
+                                    <label> {{ user_FirstName }}</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>Last Name</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label> {{ user_LastName }}</label>
+                                </div>
                             </div>
                             <div class="row row-style">
                                 <div class="col-md-2">
-                                                <label >Google ID :</label>
+                                    <label>Address</label>
                                 </div>
                                 <div class="col-md-10">
-                                                <label > {{ user_GoogleId }} </label>
+                                    <label> {{ user_Address }}</label>
                                 </div>
+                            </div>
+                            <div class="row row-style">
+                                <div class="col-md-2">
+                                    <label>Nationality</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <label> {{ user_Nationality }}</label>
+                                </div>
+                            </div>
+                            <div class="row row-style">
+                                <div class="col-md-2">
+                                    <label>Email :</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <label> {{ user_Email }} </label>
+                                </div>
+                            </div>
+                            <div class="row row-style">
+                                <div class="col-md-2">
+                                    <label>Google ID :</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <label> {{ user_GoogleId }} </label>
+                                </div>
+                            </div>
+                            <div class="row row-style">
+                                <div class="col-md-2 pr-0">
+                                    <label>Facebook ID :</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <label> {{ user_FacebookId }} </label>
+                                </div>
+                            </div>
+                            <div class="row row-style">
+                                <div class="col-md-2 mb-0">
+                                    <label>Phone :</label>
+                                </div>
+                                <div class="col-md-10 mb-0">
+                                    <label> {{ user_Phone }}</label>
+                                </div>
+                            </div>
+
                         </div>
-                        <div class="row row-style">
-                            <div class="col-md-2 pr-0">
-                                            <label >Facebook ID :</label>
-                            </div>
-                            <div class="col-md-10">
-                                            <label > {{ user_FacebookId }} </label>
-                            </div>
-                         </div>
-                            <div class="row row-style">
-                                    <div class="col-md-2 mb-0">
-                                                    <label >Phone :</label>
-                                    </div>
-                                    <div class="col-md-10 mb-0">
-                                                    <label > {{ user_Phone }}</label>
-                                    </div>
-                            </div>
 
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="card card-profile">
-                    <div class="card-avatar">
-                        <a >
+                    <div class="card-avatar" *ngIf="!loading">
+                        <a>
                             <img class="img" src="./assets/img/default_avatar.png" />
                         </a>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" *ngIf="!loading">
                         <h6 class="card-category text-gray">ID: {{ userId }}</h6>
                         <h4 class="card-title"> {{ user_FirstName }} {{ user_LastName }} </h4>
                     </div>
@@ -103,174 +111,173 @@
             </div>
         </div>
 
-        <div class="row">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header card-header-danger">
-                            <h4 class="card-title ">Bookings List</h4>
-                            <p class="card-category"> Total bookings information </p>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead class=" text-primary">
-                                        <th>
-                                             ID
-                                        </th>
-                                        <th>
-                                            Booking ID
-                                        </th>
-                                        <th>
-                                            Booking Date
-                                        </th>
-                                    </thead>
-                                    <tbody>
-                                        <tr >
-                                            <td>
-                                               1
-                                           </td>
-                                           <td>
-                                            BID-1012
-                                           </td>
-                                           <td>
-                                               10-12-2018
-                                           </td>                                  
-                                        </tr>
-                                        <tr >
-                                            <td>
-                                               2
-                                           </td>
-                                           <td>
-                                            BID-1045
-                                           </td>
-                                           <td>
-                                               18-12-2018
-                                           </td>                                  
-                                        </tr>
-                                        <tr >
-                                            <td>
-                                               3
-                                           </td>
-                                           <td>
-                                            BID-1072
-                                           </td>
-                                           <td>
-                                               20-12-2018
-                                           </td>                                  
-                                        </tr>
-                                        <tr >
-                                            <td>
-                                               4
-                                           </td>
-                                           <td>
-                                            BID-1099
-                                           </td>
-                                           <td>
-                                               23-12-2018
-                                           </td>                                  
-                                        </tr>
-                                        <tr >
-                                            <td>
-                                               5
-                                           </td>
-                                           <td>
-                                            BID-2015
-                                           </td>
-                                           <td>
-                                               31-12-2018
-                                           </td>                                  
-                                        </tr>
-                                       
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+        <div class="row" *ngIf="!loading">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Bookings List</h4>
+                        <p class="card-category"> Total bookings information </p>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header card-header-danger">
-                            <h4 class="card-title ">Trips List</h4>
-                            <p class="card-category"> Total Trip information </p>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead class=" text-primary">
-                                        <th>
-                                             ID
-                                        </th>
-                                        <th>
-                                            Trip ID
-                                       </th>
-                                        <th>
-                                            Booking ID
-                                        </th>
-                                    </thead>
-                                    <tbody>
-                                        <tr >
-                                            <td>
-                                               1
-                                           </td>
-                                           <td>
-                                            TID-1012
-                                           </td>
-                                           <td>
-                                               10-12-2018
-                                           </td>                                  
-                                        </tr>
-                                        <tr >
-                                            <td>
-                                               2
-                                           </td>
-                                           <td>
-                                            TID-1045
-                                           </td>
-                                           <td>
-                                               18-12-2018
-                                           </td>                                  
-                                        </tr>
-                                        <tr >
-                                            <td>
-                                               3
-                                           </td>
-                                           <td>
-                                            TID-1072
-                                           </td>
-                                           <td>
-                                               20-12-2018
-                                           </td>                                  
-                                        </tr>
-                                        <tr >
-                                            <td>
-                                               4
-                                           </td>
-                                           <td>
-                                            TID-1099
-                                           </td>
-                                           <td>
-                                               23-12-2018
-                                           </td>                                  
-                                        </tr>
-                                        <tr >
-                                            <td>
-                                               5
-                                           </td>
-                                           <td>
-                                            TID-2015
-                                           </td>
-                                           <td>
-                                               31-12-2018
-                                           </td>                                  
-                                        </tr>
-                                       
-                                    </tbody>
-                                </table>
-                            </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Booking ID
+                                    </th>
+                                    <th>
+                                        Booking Date
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            1
+                                        </td>
+                                        <td>
+                                            BID-1012
+                                        </td>
+                                        <td>
+                                            10-12-2018
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            2
+                                        </td>
+                                        <td>
+                                            BID-1045
+                                        </td>
+                                        <td>
+                                            18-12-2018
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            BID-1072
+                                        </td>
+                                        <td>
+                                            20-12-2018
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            4
+                                        </td>
+                                        <td>
+                                            BID-1099
+                                        </td>
+                                        <td>
+                                            23-12-2018
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            5
+                                        </td>
+                                        <td>
+                                            BID-2015
+                                        </td>
+                                        <td>
+                                            31-12-2018
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Trips List</h4>
+                        <p class="card-category"> Total Trip information </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Trip ID
+                                    </th>
+                                    <th>
+                                        Booking ID
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            1
+                                        </td>
+                                        <td>
+                                            TID-1012
+                                        </td>
+                                        <td>
+                                            10-12-2018
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            2
+                                        </td>
+                                        <td>
+                                            TID-1045
+                                        </td>
+                                        <td>
+                                            18-12-2018
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            TID-1072
+                                        </td>
+                                        <td>
+                                            20-12-2018
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            4
+                                        </td>
+                                        <td>
+                                            TID-1099
+                                        </td>
+                                        <td>
+                                            23-12-2018
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            5
+                                        </td>
+                                        <td>
+                                            TID-2015
+                                        </td>
+                                        <td>
+                                            31-12-2018
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  
+</div>

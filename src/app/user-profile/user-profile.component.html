@@ -9,8 +9,15 @@
                 <ul class="col-1 mb-0 pr-0 pl-0">
                 </ul>    
             </div>
+            <mat-progress-bar
+            class="example-margin"
+            [color]="color"
+            [mode]="mode"
+            [value]="value"
+            [bufferValue]="bufferValue"  *ngIf="loading">
+            </mat-progress-bar>
 
-            <div class="row" >
+            <div class="row" *ngIf="!loading" >
                     <div class="col-md-9 "></div>
                     <form class="navbar-form col-md-3 ">
                             <div class="input-group no-border">
@@ -192,6 +199,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+            
     </div>
 </div>

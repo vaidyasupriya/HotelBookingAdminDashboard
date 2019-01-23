@@ -40,6 +40,10 @@ import { MarginComponent } from './margin/margin.component';
 import { TravellersComponent } from './travellers/travellers.component';
 import { TripsDetailsComponent } from './trips/trips-details/trips-details.component';
 import { BookingDetailsComponent } from './bookings/booking-details/booking-details.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+// import { ExcelService } from './services/excel.service';
+import { LoginAlertBoxComponent } from './login/login.component';
+
 
 @NgModule({
   imports: [
@@ -68,16 +72,17 @@ import { BookingDetailsComponent } from './bookings/booking-details/booking-deta
    MatProgressSpinnerModule,
    HttpClientModule,
    MatExpansionModule,
+   MatProgressBarModule,
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
     LoginComponent,
-
+    LoginAlertBoxComponent
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [MatExpansionModule]
-
+  exports: [MatExpansionModule],
+  entryComponents: [LoginAlertBoxComponent],
 })
 export class AppModule { }

@@ -4,113 +4,281 @@
             <div class="col-md-12">
                 <div class="card card-profile">
                     <div class="card-avatar">
-                        <a >
+                        <a>
                             <img class="img" src="./assets/img/default_avatar.png" />
-                            </a>
+                        </a>
                     </div>
                     <div class="card-body">
-                        <h6 class="card-category text-gray">ID: userID </h6>
-                        <h4 class="card-title">  user_FirstName user_LastName  </h4>
+                        <h6 class="card-category text-gray" *ngIf="!loading"  >ID: {{ this.admin_$id }} </h6>
+                        <h4 class="card-title" *ngIf="!loading">{{ admin_FirstName }} {{ admin_LastName }} </h4>
                     </div>
+                    <mat-progress-bar
+                        class="example-margin"
+                        [color]="color"
+                        [mode]="mode"
+                        [value]="value"
+                        [bufferValue]="bufferValue"  *ngIf="loading">
+                    </mat-progress-bar>
                 </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12" *ngIf="!loading" >
                 <div class="card">
                     <div class="card-header card-header-danger">
                         <h4 class="card-title">Admin Profile</h4>
                         <p class="card-category">Information</p>
                     </div>
                     <div class="card-body">
-                            <div class="row row-style">
-                             <div class="col-md-2">
-                                            <label >ID</label>
-                             </div>
-                             <div class="col-md-4">
-                                            <label > userID </label>
-                             </div>
-                             <div class="col-md-2">
-                                            <label >DOB(AGE)</label>
-                             </div>
-                             <div class="col-md-4">
-                                            <label > user_Age </label>
-                             </div>
+                        <div class="row row-style">
+                            <div class="col-md-2">
+                                <label>ID</label>
                             </div>
-                            <div class="row row-style" >
-                               <div class="col-md-2">
-                                    <label >First Name</label>
-                                </div>
-                                <div class="col-md-4">
-                                        <label > user_FirstName </label>
-                                    </div>
-                                <div class="col-md-2">
-                                        <label >Last Name</label>
-                                </div>
-                                <div class="col-md-4">
-                                        <label >  user_LastName </label>
-                                    </div>
+                            <div class="col-md-4">
+                                <label> {{ admin_Id }} </label>
                             </div>
-                            <div class="row row-style">
+                            <div class="col-md-2">
+                                <label>DOB</label>
+                            </div>
+                            <div class="col-md-4">
+                                <label> {{ admin_DateOfBirth }}</label>
+                            </div>
+                        </div>
+                        <!-- <div class="row row-style">
+                            <div class="col-md-2">
+                                <label>First Name</label>
+                            </div>
+                            <div class="col-md-4">
+                                <label> user_FirstName </label>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Last Name</label>
+                            </div>
+                            <div class="col-md-4">
+                                <label> user_LastName </label>
+                            </div>
+                        </div> -->
+                        <div class="row row-style">
+                            <div class="col-md-2">
+                                <label>Google Id:</label>
+                            </div>
+                            <div class="col-md-10">
+                                <label> {{admin_GoogleId}} </label>
+                            </div>
+                        </div>
+                        <div class="row row-style">
+                            <div class="col-md-2">
+                                <label>Facebook Id:</label>
+                            </div>
+                            <div class="col-md-10">
+                                <label> {{ admin_FacebookId }} </label>
+                            </div>
+                        </div>
+                        <div class="row row-style">
                                 <div class="col-md-2">
-                                            <label >City</label>
+                                    <label>Address </label>
                                 </div>
                                 <div class="col-md-10">
-                                        <label > user_BillingAddressCity </label>
-                                    </div>
+                                    <label> {{ admin_Address }} </label>
+                                </div>
                             </div>
-                            <div class="row row-style">
-                                    <div class="col-md-2">
-                                                    <label >State</label>
-                                    </div>
-                                    <div class="col-md-10">
-                                            <label >  user_BillingAddressState </label>
-                                        </div>
+                        <div class="row row-style">
+                            <div class="col-md-2">
+                                <label>Nationality </label>
                             </div>
-                            <div class="row row-style">
-                                    <div class="col-md-2">
-                                                    <label >Country</label>
-                                    </div>
-                                    <div class="col-md-10">
-                                            <label >  user_BillingAddressCountry </label>
-                                        </div>
+                            <div class="col-md-10">
+                                <label> {{ admin_Nationality }} </label>
                             </div>
-                            <div class="row row-style">
-                                    <div class="col-md-2">
-                                                    <label >Zip Code</label>
-                                        </div>
-                                        <div class="col-md-10">
-                                                <label >user_BillingAddressZipcode </label>
-                                    </div>
+                        </div>
+                        <div class="row row-style">
+                            <div class="col-md-2">
+                                <label>Email :</label>
                             </div>
-                            <div class="row row-style">
-                                    <div class="col-md-2">
-                                                    <label >Email :</label>
-                                    </div>
-                                    <div class="col-md-10">
-                                                    <label >  user_Email  </label>
-                                    </div>
+                            <div class="col-md-10">
+                                <label> {{ admin_Email }} </label>
                             </div>
-                            <div class="row row-style">
-                                    <div class="col-md-2 mb-0">
-                                                    <label >Phone :</label>
-                                    </div>
-                                    <div class="col-md-10 mb-0">
-                                                    <label >  user_Phone</label>
-                                    </div>
+                        </div>
+                        <div class="row row-style">
+                            <div class="col-md-2 mb-0">
+                                <label>Phone :</label>
                             </div>
+                            <div class="col-md-10 mb-0">
+                                <label> {{ admin_Phone }}</label>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 user-role-class" *ngIf="!loading" >
+                <div class="card card-plain">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Assign Roles</h4>
+                    </div>
+                </div>
+                <mat-accordion>
+                    <!-- <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Create a user
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <form class="example-form"  onsubmit="newUserSubmit()">
+                            <table class="example-full-width" cellspacing="0">
+                                <tr>
+                                    <td class="user-form-td-style">
+                                        <label>Name &nbsp;&nbsp;</label>
+                                    </td>
+
+                                    <td class="user-form-td-style">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="First Name" name="discountAmmt"
+                                                formControlName="discountAmmt" required>
+                                        </mat-form-field>
+                                    </td>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Last Name" name="limitation" formControlName="limitation"
+                                                required>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="user-form-td-style">
+                                        <label>Date of Birth</label>
+                                    </td>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Date of birth" name="validity" formControlName="validity"
+                                                required>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="user-form-td-style">
+                                        <label>Address</label>
+                                    </td>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Address" name="CouponCode" formControlName="CouponCode"
+                                                required>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="user-form-td-style">
+                                        <label>Nationality</label>
+                                    </td>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Nationality" formControlName="res_count" name="res_count">
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td class="user-form-td-style">
+                                        <label>Phone</label>
+                                    </td>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Phone" formControlName="res_count" name="res_count">
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="user-form-td-style">
+                                        <label>Facebook Id</label>
+                                    </td>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="FacebookId" name="discountPerc"
+                                                formControlName="discountPerc" required>
+                                        </mat-form-field>
+                                    </td>
+
+                                <tr>
+                                    <td class="user-form-td-style">
+                                        <label>Google Id</label>
+                                    </td>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="GoogleId" name="res_type" formControlName="res_type"
+                                                required>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                        </form>
+                        <button mat-raised-button color="primary" class="userDataSubmitButton">
+                            Submit</button>
+                    </mat-expansion-panel> -->
+                    <mat-expansion-panel >
+                            <!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"> -->
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Update a user
+                            </mat-panel-title>
+                            <mat-panel-description></mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <form class="example-form" *ngIf="showFindButton" onsubmit="updateUserSubmit()">
+                            <table class="example-full-width" cellspacing="0">
+                                <tr>
+                                    <td class="user-form-td-style">
+                                        <label>User Id &nbsp;&nbsp;</label>
+                                    </td>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="User Id" name="userID" formControlName="userID"
+                                                required>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                        <div class="adminForm-parent row" *ngIf="showFindButton">
+                            <button mat-raised-button color="primary" class="userDataSubmitButton" (click)="userDataSubmit()">
+                                Find</button>
+                        </div>
+                        <div class="adminRemoveLabel" *ngIf="showFindLabel">
+                            <h4>Do you want to update the role of <b>""</b> ?</h4>
+                        </div>
+                        <div class="adminForm-parent " *ngIf="showdeleteButton">
+
+                            <form class="example-form" onsubmit="updateUserSubmit()">
+                                <table class="example-full-width" cellspacing="0">
+                                    <tr>
+                                        <td class="user-form-td-style">
+                                                <label>Role &nbsp;&nbsp;</label>
+                                        </td>
+                                        <td>
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Role" name="userRole" formControlName="userRole"
+                                                    required>
+                                            </mat-form-field>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                        <div class="adminForm-parent row" *ngIf="showdeleteButton">
+                            <button mat-raised-button color="primary" class="adminRemoveButton">Update</button>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+            <div class="col-md-12" *ngIf="!loading" >
                 <div class="card mt-0 mb-0">
                     <div class="card-body">
-                        <button mat-raised-button color="warn" (click)="logout()"> 
+                        <button mat-raised-button color="warn" (click)="logout()">
                             Logout
-                          </button>
+                        </button>
+
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
-  </div>
-  
+</div>

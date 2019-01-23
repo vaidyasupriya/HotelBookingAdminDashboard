@@ -18,7 +18,6 @@ export const ROUTES: RouteInfo[] = [
     { path: '/adminLayout/travellers', title: 'Travellers',  icon: 'content_paste', class: '' },
     // { path: '/table-list', title: 'Table Archive',  icon: 'library_books', class: '' },
 ];
-
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',

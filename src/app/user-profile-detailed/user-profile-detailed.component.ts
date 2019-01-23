@@ -24,10 +24,17 @@ export class UserProfileDetailedComponent implements OnInit {
   user_Nationality: any;
   //
   orderDetailes: any;
+    // progress bar
+    color = 'primary';
+    mode = 'indeterminate';
+    value = 50;
+    bufferValue = 100;
+    loading = true;
+     // progress bar
   constructor(private http: HttpClient, private dynamicapiservice: dynamicApiService) { }
 
   ngOnInit() {
-
+    this.loading = true;
     this.dynamicapiservice.currentProductASIN.
   subscribe(selectedUserID => this.selectedUserID = selectedUserID);
   this.http.get('https://doyenowebapp2.azurewebsites.net/api/users').
@@ -39,7 +46,6 @@ export class UserProfileDetailedComponent implements OnInit {
         if (this.selectedUserID === userdetail.Id) {
           // this.orderDetailes = userdetail.Orders;
           console.log(userdetail);
-
           // for (const orderDetail of this.orderDetailes) {
           //   console.log(orderDetail.OrderNumber);
           // }
@@ -53,6 +59,8 @@ export class UserProfileDetailedComponent implements OnInit {
           this.user_GoogleId = userdetail.GoogleId;
           this.user_FacebookId = userdetail.FacebookId;
           this.user_Nationality = userdetail.Nationality;
+          this.loading = false;
+
         }
     }
   });
