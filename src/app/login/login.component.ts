@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
   existingMember: LoginInfo = new LoginInfo();
   loginForm: FormGroup;
   users: any;
-   Swal = require('sweetalert2');
   constructor(private router: Router , private http: HttpClient, private fb: FormBuilder,
     public dialog: MatDialog) {
     this.loginForm = this.fb.group({
@@ -43,10 +42,6 @@ export class LoginComponent implements OnInit {
       console.log(error);
     });
   }
-  // login() {
-  //   this.router.navigate(['/adminLayout/dashboard']);
-
-  // }
   login() {
     let loginSuccessful = false;
     const postHeaders = new HttpHeaders();
@@ -76,13 +71,10 @@ export class LoginComponent implements OnInit {
         loginSuccessful = true;
       },
         err => {
-          // const Swal = require('sweetalert2');
           this.dialog.open( LoginAlertBoxComponent);
-          // alert(' UserId not found. Please enter correct credentials.');
           console.log(err);
           loginSuccessful = false;
           this.loginForm.reset();
-          // alert(' UserId not found. Please enter correct credentials.');
         }, () => {
           if (loginSuccessful) {
             this.router.navigate(['/adminLayout/dashboard']);
