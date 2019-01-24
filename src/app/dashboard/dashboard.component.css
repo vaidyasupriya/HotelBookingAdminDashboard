@@ -5,3 +5,20 @@
 #chartBkgnd, .chart{
   background-color: white;
 }
+.table thead th {
+  vertical-align: top ;
+}
+
+.dropdown-toggle{
+  width: 100%;
+  padding: 10px;
+  background-color: #ffff;
+  color: black;
+  border: 2px solid rgba(0, 0, 0, 0.06);;
+  box-shadow: none;
+  margin: 0px;
+}
+.dropdown-menu
+{
+  top:0px;
+}

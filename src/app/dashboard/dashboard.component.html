@@ -94,12 +94,12 @@
                       <div class="ct-chart" id="websiteViewsChart"></div>
                   </div>
                   <div class="card-body">
-                      <h4 class="card-title">Email Subscriptions</h4>
-                      <p class="card-category">Last Campaign Performance</p>
+                      <h4 class="card-title">Total Sales</h4>
+                      <p class="card-category">Annual sale</p>
                   </div>
                   <div class="card-footer">
                       <div class="stats">
-                          <i class="material-icons">access_time</i> campaign sent 2 days ago
+                          <i class="material-icons">access_time</i> last booking 20 min ago
                       </div>
                   </div>
               </div>
@@ -110,12 +110,12 @@
                       <div class="ct-chart" id="completedTasksChart"></div>
                   </div>
                   <div class="card-body">
-                      <h4 class="card-title">Used Vouchers</h4>
-                      <p class="card-category">Last Used Voucher</p>
+                      <h4 class="card-title">New members</h4>
+                      <p class="card-category">Last registered member</p>
                   </div>
                   <div class="card-footer">
                       <div class="stats">
-                          <i class="material-icons">access_time</i> voucher used 2 min ago
+                          <i class="material-icons">access_time</i> member added 2 min ago
                       </div>
                   </div>
               </div>
@@ -134,25 +134,43 @@
                                         <thead class=" text-primary">
                                             <th>
     
-                                                ID
+                                                Process ID
                                             </th>
                                             <th>
-                                                Booking Id
+                                                Reference Number
                                             </th>
                                             <th>
-                                                Booking Date
+                                                Guest Name
                                             </th>
                                             <th>
-                                                   Destination 
+                                                Booking Date 
                                             </th>
                                             <th>
-                                                User Id
+                                                Check-in Date
                                             </th>
     
                                             <th>
-                                               Trip Id
+                                               Booking Status
                                             </th>
-                                           
+                                            <th>
+    
+                                                Cancellation Deadline Date
+                                            </th>
+                                            <th>
+                                                Payment Deadline Date
+                                            </th>
+                                            <th>
+                                                Cost
+                                            </th>
+                                            <th>
+                                               Sale
+                                            </th>
+                                            <th>
+                                                Commission Rate
+                                            </th>
+                                            <th>
+                                              Action
+                                            </th>
                                         </thead>
                                         <tbody>
                                             <!-- <tr *ngFor="let booking of bookings ; index as i" [attr.data-index]="i" (click)="TobookingDetails(booking.$id ,booking.ASIN)"
@@ -182,26 +200,57 @@
                                             </tr> -->
                                           <tr  class="bookingRow" >
                                             <td>
-                                                1
+                                               HF-89759985-P302E386
                                             </td>
                                             <td>
-                                               BID-101
+                                               TL114
                                             </td>
                                             <td>
-                                               31-12-2018
+                                              Remi Guedj
                                             </td>
     
                                             <td>
-                                                Mexico
+                                               May 03,2018
                                             </td>
                                             <td>
-                                                UID-1005
+                                                May 30,2018
                                             </td>
                                             <td>
-                                                   TID-45862520
+                                                  Booked
+                                            </td>
+                                            <td>
+                                                Non-Refundable
+                                            </td>
+                                            <td>
+                                               -
+                                            </td>
+                                            <td>
+                                               134.83 USD
+                                            </td>
+    
+                                            <td>
+                                                134.83 USD
+                                            </td>
+                                            <td>
+                                                0 %
+                                            </td>
+                                            <td class="pr-0 pl-0">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                      Actions
+                                                      <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                      <li><a href="#">Action</a></li>
+                                                      <li><a href="#">Another action</a></li>
+                                                      <li><a href="#">Something else here</a></li>
+                                                      <li role="separator" class="divider"></li>
+                                                      <li><a href="#">Separated link</a></li>
+                                                    </ul>
+                                                  </div>
                                             </td>
                                           </tr>
-                                          <tr  class="bookingRow">
+                                          <!-- <tr  class="bookingRow">
                                                 <td>
                                                     2
                                                 </td>
@@ -284,7 +333,7 @@
                                                             <td>
                                                                    TID-985020
                                                             </td>
-                                                          </tr>
+                                                          </tr> -->
                                         </tbody>
                                     </table>
                         </div>
@@ -306,14 +355,14 @@
                                   <li class="nav-item">
                                       <a mat-button class="nav-link active" href="#profile" data-toggle="tab">
                                           <!-- <i class="material-icons">bug_report</i>  -->
-                                          Destinations
+                                          Hotels
                                           <div class="ripple-container"></div>
                                       </a>
                                   </li>
                                   <li class="nav-item">
                                       <a mat-button class="nav-link" href="#messages" data-toggle="tab">
                                           <!-- <i class="material-icons">code</i>  -->
-                                          Users
+                                          Revenue
                                           <div class="ripple-container"></div>
                                       </a>
                                   </li>
