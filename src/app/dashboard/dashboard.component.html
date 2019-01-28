@@ -131,7 +131,7 @@
                     <div class="card-body">
                         <div class="table-responsive">
                                 <table class="table">
-                                        <thead class=" text-primary">
+                                        <thead class=" text-primary" >
                                             <th>
     
                                                 Process ID
@@ -198,41 +198,44 @@
                                                 </td>
     
                                             </tr> -->
-                                          <tr  class="bookingRow" >
+                                          <tr  class="bookingRow" *ngFor="let booking of bookings ; index as i" [attr.data-index]="i">
                                             <td>
-                                               HF-89759985-P302E386
+                                                {{booking.BookingId}}
                                             </td>
                                             <td>
                                                TL114
                                             </td>
                                             <td>
-                                              Remi Guedj
+                                             {{booking.User.FirstName}} {{booking.User.LastName}}
                                             </td>
     
                                             <td>
-                                               May 03,2018
+                                                {{booking.CheckinData}}
                                             </td>
                                             <td>
-                                                May 30,2018
+                                                {{booking.BookingDate}}
                                             </td>
                                             <td>
-                                                  Booked
+                                                {{booking.BookingStatus}}
                                             </td>
                                             <td>
-                                                Non-Refundable
+                                                {{booking.CancellationDeadlineDate}}
                                             </td>
                                             <td>
-                                               -
+                                                    {{booking.PaymentDeadlineDate}}
+                                               
                                             </td>
                                             <td>
-                                               134.83 USD
+                                                  {{booking.Cost}}
                                             </td>
     
                                             <td>
-                                                134.83 USD
+                                                {{booking.Sale}}
+
                                             </td>
                                             <td>
-                                                0 %
+                                                {{booking.CommissionRate}}
+
                                             </td>
                                             <td class="pr-0 pl-0">
                                                 <div class="dropdown">
@@ -250,90 +253,6 @@
                                                   </div>
                                             </td>
                                           </tr>
-                                          <!-- <tr  class="bookingRow">
-                                                <td>
-                                                    2
-                                                </td>
-                                                <td>
-                                                   BID-102
-                                                </td>
-                                                <td>
-                                                   25-12-2018
-                                                </td>
-        
-                                                <td>
-                                                    San Fransisco
-                                                </td>
-                                                <td>
-                                                    UID-1095
-                                                </td>
-                                                <td>
-                                                       TID-4582520
-                                                </td>
-                                              </tr>
-                                              <tr  class="bookingRow">
-                                                    <td>
-                                                        3
-                                                    </td>
-                                                    <td>
-                                                       BID-105
-                                                    </td>
-                                                    <td>
-                                                       5-11-2018
-                                                    </td>
-            
-                                                    <td>
-                                                        Las Vegas
-                                                    </td>
-                                                    <td>
-                                                        UID-1001
-                                                    </td>
-                                                    <td>
-                                                           TID-45862654  
-                                                    </td>
-                                                  </tr>
-                                                  <tr  class="bookingRow">
-                                                        <td>
-                                                            4
-                                                        </td>
-                                                        <td>
-                                                           BID-104
-                                                        </td>
-                                                        <td>
-                                                           26-12-2018
-                                                        </td>
-                
-                                                        <td>
-                                                            London
-                                                        </td>
-                                                        <td>
-                                                            UID-1055
-                                                        </td>
-                                                        <td>
-                                                               TID-10022520
-                                                        </td>
-                                                      </tr>
-                                                      <tr  class="bookingRow">
-                                                            <td>
-                                                                5
-                                                            </td>
-                                                            <td>
-                                                               BID-1010
-                                                            </td>
-                                                            <td>
-                                                               29-12-2018
-                                                            </td>
-                    
-                                                            <td>
-                                                                Paris
-                                                            </td>
-                                                            <td>
-                                                                UID-1015
-                                                            </td>
-                                                            <td>
-                                                                   TID-985020
-                                                            </td>
-                                                          </tr> -->
                                         </tbody>
                                     </table>
                         </div>

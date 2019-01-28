@@ -13,6 +13,8 @@ export class dynamicApiService {
     cartTotalCosting: number;
     private productASIN = new BehaviorSubject('');
     currentProductASIN = this.productASIN.asObservable();
+    private bookingId = new BehaviorSubject('');
+    currentbookingId = this.bookingId.asObservable();
 
 
 
@@ -22,6 +24,10 @@ export class dynamicApiService {
         this.productASIN.next(prodctASIN);
         this.imageSource.next(imageSource);
         this.productsArray.push({'ASIN': prodctASIN, 'image': imageSource});
+    }
+    setSelectedBooking(bookingId: string) {
+        this.bookingId.next(bookingId);
+        this.productsArray.push({'bookingId': bookingId});
     }
 
     setSelectedUser(userId: any) {

@@ -12,7 +12,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  orderDetails: any;
+
+  bookings: any;
   constructor(private http: HttpClient) {}
   startAnimationForLineChart(chart) {
     let seq: any, delays: any, durations: any;
@@ -70,11 +71,16 @@ export class DashboardComponent implements OnInit {
     seq2 = 0;
   };
   ngOnInit() {
-    this.http.get('https://signorawareapi.azurewebsites.net/api/orders').
+    this.http.get('https://doyenowebapp2.azurewebsites.net/api/bookings').
     subscribe(data => {
-      this.orderDetails = data;
+      this.bookings = data;
+      // this.loading = false;
+      for ( const booking of this.bookings ) {
+        console.log(booking);
+      }
+    }, error => {
+      console.log(error);
     });
-
     /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
     const dataDailySalesChart: any = {
       labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
