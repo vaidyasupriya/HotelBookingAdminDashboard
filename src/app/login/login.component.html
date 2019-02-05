@@ -2,8 +2,9 @@
 <div class="row ml-0 mr-0">
     <ul class="col-4"></ul>
     <ul class="col-4">
-
+       
   <mat-card class="example-card">
+      
     <mat-card-header>
       <mat-card-title class="login-main-header" >Login</mat-card-title>
     </mat-card-header>
@@ -23,7 +24,6 @@
           </mat-form-field></td>
         </tr></table>
       </form>
-      <!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> -->
     </mat-card-content>
     <mat-card-actions>
       <div class="login-parent row">
@@ -35,6 +35,9 @@
       </div>
     </mat-card-actions>
   </mat-card>
+  <mat-progress-bar class="example-margin" [color]="color" [mode]="mode" [value]="value"
+      [bufferValue]="bufferValue" *ngIf="loading" class="progress-bar-style" >
+  </mat-progress-bar>
 </ul>
   <ul class="col-4"></ul>
 

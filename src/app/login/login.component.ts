@@ -13,6 +13,13 @@ const PASSWORD_REGEX = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*]).{8,}$/
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+     // progress bar
+     color = 'primary';
+     mode = 'indeterminate';
+     value = 50;
+     bufferValue = 100;
+     loading = false;
+      // progress bar
   existingMember: LoginInfo = new LoginInfo();
   loginForm: FormGroup;
   users: any;
@@ -36,6 +43,7 @@ export class LoginComponent implements OnInit {
     });
   }
   login() {
+    this.loading = true;
     let loginSuccessful = false;
     const postHeaders = new HttpHeaders();
     postHeaders.append('Content-Type', 'application/x-www-form-urlencoded');
