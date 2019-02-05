@@ -45,7 +45,6 @@ export class BookingDetailsComponent implements OnInit {
       for ( const booking of this.bookings ) {
         console.log(this.selectedBookingID);
         if (this.selectedBookingID === booking.BookingId) {
-
             this.bookingId = booking.BookingId;
             console.log(this.bookingId);
             this.booking_BookingDate = booking.BookingDate;
@@ -104,14 +103,13 @@ export class BookingDetailsComponent implements OnInit {
 
  downloadCSV(args, from, align) {
     let data, filename, link;
-
     let csv = this.convertArrayOfObjectsToCSV({
         data: this.bookings
     });
-    if (csv == null) {return};
-
+    if (csv == null) {
+        return
+    };
     filename = args.filename || 'export.csv';
-
     if (!csv.match(/^data:text\/csv/i)) {
         csv = 'data:text/csv;charset=utf-8,' + csv;
     }
@@ -131,5 +129,6 @@ export class BookingDetailsComponent implements OnInit {
             from: from,
             align: align
         },
-}
+     });
+    }
 }

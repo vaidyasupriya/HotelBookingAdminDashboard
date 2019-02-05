@@ -128,17 +128,17 @@
                     <div class="card-header card-header-success">
                         <h4 class="card-title ">Latest Bookings</h4>
                     </div>
-                    <div class="card-body">
+                    <mat-progress-bar
+                    class="progress-bar-style"
+                    [color]="color"
+                    [mode]="mode"
+                    [value]="value"
+                    [bufferValue]="bufferValue"  *ngIf="loading">
+                    </mat-progress-bar>
+                    <div class="card-body" *ngIf="!loading">
                         <div class="table-responsive">
                                 <table class="table">
                                         <thead class=" text-primary" >
-                                            <th>
-    
-                                                Process ID
-                                            </th>
-                                            <th>
-                                                Reference Number
-                                            </th>
                                             <th>
                                                 Guest Name
                                             </th>
@@ -156,18 +156,14 @@
     
                                                 Cancellation Deadline Date
                                             </th>
-                                            <th>
-                                                Payment Deadline Date
-                                            </th>
+                                          
                                             <th>
                                                 Cost
                                             </th>
                                             <th>
                                                Sale
                                             </th>
-                                            <th>
-                                                Commission Rate
-                                            </th>
+                                           
                                             <th>
                                               Action
                                             </th>
@@ -200,12 +196,6 @@
                                             </tr> -->
                                           <tr  class="bookingRow" *ngFor="let booking of bookings ; index as i" [attr.data-index]="i">
                                             <td>
-                                                {{booking.BookingId}}
-                                            </td>
-                                            <td>
-                                               TL114
-                                            </td>
-                                            <td>
                                              {{booking.User.FirstName}} {{booking.User.LastName}}
                                             </td>
     
@@ -222,19 +212,11 @@
                                                 {{booking.CancellationDeadlineDate}}
                                             </td>
                                             <td>
-                                                    {{booking.PaymentDeadlineDate}}
-                                               
-                                            </td>
-                                            <td>
                                                   {{booking.Cost}}
                                             </td>
     
                                             <td>
                                                 {{booking.Sale}}
-
-                                            </td>
-                                            <td>
-                                                {{booking.CommissionRate}}
 
                                             </td>
                                             <td class="pr-0 pl-0">

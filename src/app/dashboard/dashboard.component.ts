@@ -12,7 +12,13 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+// progress bar
+color = 'primary';
+mode = 'indeterminate';
+value = 50;
+bufferValue = 100;
+loading = true;
+ // progress bar
   bookings: any;
   constructor(private http: HttpClient) {}
   startAnimationForLineChart(chart) {
@@ -71,6 +77,8 @@ export class DashboardComponent implements OnInit {
     seq2 = 0;
   };
   ngOnInit() {
+    this.loading = true;
+
     this.http.get('https://doyenowebapp2.azurewebsites.net/api/bookings').
     subscribe(data => {
       this.bookings = data;
@@ -78,6 +86,7 @@ export class DashboardComponent implements OnInit {
       for ( const booking of this.bookings ) {
         console.log(booking);
       }
+      this.loading = false;
     }, error => {
       console.log(error);
     });

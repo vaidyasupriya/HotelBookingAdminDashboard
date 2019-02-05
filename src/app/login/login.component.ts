@@ -4,15 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LoginInfo } from './LoginInfo';
 import { FormBuilder, FormGroup, Validators, FormControl, FormArray } from '@angular/forms';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material';
-
 const EMAIL_REGEX = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
-// const MOBILE_REGEX = /^([0|\+[0-9]{123,456})?([7-9][0-9]{9})$/;
-// const NAME_REGEX = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
 const PASSWORD_REGEX = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*]).{8,}$/;
-
-// export interface DialogData {
-//   animal: 'panda' | 'unicorn' | 'lion';
-// }
 
 @Component({
   selector: 'app-login',
