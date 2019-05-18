@@ -54,7 +54,7 @@
                                        
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let booking of bookings; index as i" [attr.data-index]="i" (click)="ToBookingDetails(booking.BookingId)"
+                                        <tr *ngFor="let booking of this.bookings; index as i" [attr.data-index]="i" (click)="ToBookingDetails(booking.BookingId)"
                                             class="bookingRow">
                                             <td>
                                                 <a>
@@ -65,14 +65,14 @@
                                                 {{ booking.BookingId }}
                                             </td>
                                             <td>
-                                                {{ booking.BookingDate }}
+                                                {{booking.BookingDate | date: 'yyyy-MM-dd'}}
+
                                             </td>
 
                                             <td>
-                                                {{ booking.CheckinData }}
-                                            </td>
+                                                {{booking.CheckinData | date: 'yyyy-MM-dd'}}                                            </td>
                                             <td>
-                                                {{ booking.User.Id }}
+                                                {{ booking.User ? booking.User.Id : "NULL" }}
                                             </td>
                                             <td class="text-primary">
                                                 ${{ booking.Cost }}

@@ -146,7 +146,7 @@
                                                 Booking Date 
                                             </th>
                                             <th>
-                                                Check-in Date
+                                                Check-in 
                                             </th>
     
                                             <th>
@@ -154,7 +154,7 @@
                                             </th>
                                             <th>
     
-                                                Cancellation Deadline Date
+                                                Cancellation Deadline
                                             </th>
                                           
                                             <th>
@@ -194,22 +194,22 @@
                                                 </td>
     
                                             </tr> -->
-                                          <tr  class="bookingRow" *ngFor="let booking of bookings ; index as i" [attr.data-index]="i">
+                                          <tr  class="bookingRow" *ngFor="let booking of this.bookings| slice:0:5 ; index as i"  [attr.data-index]="i">
                                             <td>
-                                             {{booking.User.FirstName}} {{booking.User.LastName}}
+                                             {{booking.User ? booking.User.FirstName : "NULL"}} {{booking.User ? booking.User.LastName : "NULL"}}
                                             </td>
     
                                             <td>
-                                                {{booking.CheckinData}}
+                                                {{booking.BookingDate | date: 'yyyy-MM-dd'}}
                                             </td>
                                             <td>
-                                                {{booking.BookingDate}}
+                                                {{booking.CheckinData | date: 'yyyy-MM-dd'}}
                                             </td>
                                             <td>
                                                 {{booking.BookingStatus}}
                                             </td>
                                             <td>
-                                                {{booking.CancellationDeadlineDate}}
+                                                {{booking.CancellationDeadlineDate ? booking.CancellationDeadlineDate : "NULL"}}
                                             </td>
                                             <td>
                                                   {{booking.Cost}}
@@ -234,6 +234,16 @@
                                                     </ul>
                                                   </div>
                                             </td>
+                                          </tr>
+                                          <tr>
+                                             <td></td>
+                                             <td></td> 
+                                             <td></td> 
+                                             <td></td> 
+                                             <td></td> 
+                                             <td></td> 
+                                             <td></td> 
+                                             <td><div class="mb-0" style="float:right;cursor: pointer;color:blue"(click)="toBookings()">More</div></td> 
                                           </tr>
                                         </tbody>
                                     </table>

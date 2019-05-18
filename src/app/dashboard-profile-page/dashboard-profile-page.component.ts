@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient , HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-dashboard-profile-page',
@@ -34,6 +34,7 @@ export class DashboardProfilePageComponent implements OnInit {
     bufferValue = 100;
     loading = true;
      // progress bar
+     values: any;
 
   constructor(private router: Router, private http: HttpClient) { }
   ngOnInit() {
@@ -66,6 +67,24 @@ export class DashboardProfilePageComponent implements OnInit {
             }
           }, error => {
             console.log(error);
+          });
+          const dynamicUrl = 'https://doyenodevtest.azurewebsites.net/api/GetHotels/' + '3'+ '/' + '2019-05-24' + '/' + '2019-05-25' + '/' + 'hotel_code' + '/' + 'GER' + '/' + 'EUR';
+          // dynamicUrl = 'http://localhost:55117/api/GetHotels/' + selectedDestination + '/' +  selectedDestinationCountry + '/' +  checkInDate + '/' + checkOutDate + '/' + roomsToBook + '/' + room1_data + '/' + room2_data + '/' + room3_data + '/' + room4_data + '/' + room5_data;
+          console.log(dynamicUrl);
+          const postHeaders = new HttpHeaders();
+          postHeaders.append('Content-Type', 'application/x-www-form-urlencoded');
+          postHeaders.append('Access-Control-Allow-Origin', '*');
+          postHeaders.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+          postHeaders.append('Access-Control-Allow-Headers', 'Content-Type');
+          this.http.get(dynamicUrl, {
+            headers: postHeaders
+          }).
+          subscribe(data => {
+            this.values = data;
+            console.log(this.values);
+           
+          }, error => {
+            console.log('Error', error);
           });
   }
   logout() {

@@ -5,6 +5,8 @@ import {
 import * as Chartist from 'chartist';
 // import * as CanvasJS from '../../canvasjs.min';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,7 +22,35 @@ bufferValue = 100;
 loading = true;
  // progress bar
   bookings: any;
-  constructor(private http: HttpClient) {}
+
+  // bookings data
+  checkinDate: any;
+  checkoutDate: any;
+    // bookings data
+    public today = moment();
+ m :any;
+ t :any;
+ w :any;
+ th :any;
+ f :any;
+ s :any;
+ su :any; 
+ jan :any = [];
+ feb  :any = [];
+ mar :any= [];
+ apr :any= [];
+ may :any= [];
+ jun :any= [];
+ jul :any= [];
+ aug :any= [];
+ sep :any= [];
+ oct :any= [];
+ nov :any= [];
+ dec :any= [];
+ dayilySales_array: any = [];
+ counter = 0;
+ monthArray: any [];
+  constructor(private http: HttpClient, private router: Router) {}
   startAnimationForLineChart(chart) {
     let seq: any, delays: any, durations: any;
     seq = 0;
@@ -78,23 +108,125 @@ loading = true;
   };
   ngOnInit() {
     this.loading = true;
-
+    console.log(this.today);
     this.http.get('https://doyenowebapp2.azurewebsites.net/api/bookings').
     subscribe(data => {
       this.bookings = data;
       // this.loading = false;
       for ( const booking of this.bookings ) {
+        const bookingDataArray: any = booking.BookingData;
         console.log(booking);
+
+        this.checkinDate = bookingDataArray.checkin;
+        this.checkoutDate = bookingDataArray.checkout;
+        this.dailySales(booking);
+        this.totalSales(booking);
       }
       this.loading = false;
     }, error => {
       console.log(error);
     });
+
+    // this.graph()
+  }
+  dailySales(booking: any){
+    console.log(booking.BookingDate);
+    // let booking_day = moment(booking.BookingDate).format("YYYY-MM-DD ");
+    // let today = moment(booking.BookingDate).format("YYYY-MM-DD ");
+    let booking_day = moment(booking.BookingDate);
+    let today = moment(this.today);
+    console.log(today.diff(booking_day, "days"));
+    let diff = today.diff(booking_day, "days");
+    if(diff === 0){
+      console.log("success");
+    }else {
+      let day = moment(this.today).format('dd');
+      if(day === 'Mon'){
+        this.m = 0;
+      }else if(day === 'Tue'){
+        this.t = 0;
+      } else if(day === 'Wed'){
+        this.w = 0;
+      } else if(day === 'Thu'){
+        this.th = 0;
+      } else if(day === 'Fri'){
+        this.f = 0; 
+      } else if(day === 'Sat'){
+        this.s = 0;
+      } else if(day === 'Sun'){
+        this.su = 0;
+      }
+     
+    }
+
+  }
+  totalSales(booking: any){
+    let booking_day = moment(booking.BookingDate);
+    let current_year = this.today.format('YYYY');
+    if(booking_day.format('YYYY') === current_year){
+      if(booking_day.format('MM') === '01'){
+        this.jan.push(booking_day);
+      } else if(booking_day.format('MM') === '02'){
+        this.feb.push(booking_day);
+      } else if(booking_day.format('MM') === '03'){
+        this.mar.push(booking_day);
+      } else if(booking_day.format('MM') === '04'){
+        this.apr.push(booking_day);
+      } else if(booking_day.format('MM') === '05'){
+        this.may.push(booking_day);
+      } else if(booking_day.format('MM') === '06'){
+        this.jun.push(booking_day);
+      } else if(booking_day.format('MM') === '07'){
+        this.jul.push(booking_day);
+      } else if(booking_day.format('MM') === '08'){
+        this.aug.push(booking_day);
+      } else if(booking_day.format('MM') === '09'){
+        this.sep.push(booking_day);
+      } else if(booking_day.format('MM') === '10'){
+        this.oct.push(booking_day);
+      } else if(booking_day.format('MM') === '11'){
+        this.nov.push(booking_day);
+      } else if(booking_day.format('MM') === '12'){
+        this.dec.push(booking_day);
+      }
+      this.monthArray = [
+        this.jan.length,
+        this.feb.length,
+        this.mar.length,
+        this.apr.length,
+        this.may.length,
+        this.jun.length,
+        this.jul.length,
+        this.aug.length,
+        this.sep.length,
+        this.oct.length,
+        this.nov.length,
+        this.dec.length
+      ]
+    } else {
+      this.jan = 0;
+      this.feb = 0; 
+      this.mar = 0;
+      this.apr = 0;
+      this.may = 0; 
+      this.jun = 0;
+      this.jul = 0;
+      this.aug = 0;
+      this.sep = 0;
+      this.oct = 0;
+      this.nov = 0; 
+      this.dec = 0; 
+    }
+    this.graph()
+
+  }
+  graph(){
     /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
     const dataDailySalesChart: any = {
       labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
       series: [
-        [50, 17, 7, 17, 23, 18, 38]
+        [this.m,this.t,this.w,this.th,this.f,this.s,this.su]
+        // [50, 17, 7, 17, 23, 18, 38]
       ]
     };
     const optionsDailySalesChart: any = {
@@ -139,7 +271,8 @@ loading = true;
     const datawebsiteViewsChart = {
       labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
       series: [
-        [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
+        // [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
+        this.monthArray
 
       ]
     };
@@ -148,7 +281,7 @@ loading = true;
         showGrid: false
       },
       low: 0,
-      high: 1000,
+      high: 100,
       chartPadding: {
         top: 0,
         right: 5,
@@ -170,7 +303,9 @@ loading = true;
 
     // start animation for the Emails Subscription Chart
     this.startAnimationForBarChart(websiteViewsChart);
+  } 
+  toBookings(){
+    this.router.navigate(['adminLayout/bookings']);
   }
-
 
 }
